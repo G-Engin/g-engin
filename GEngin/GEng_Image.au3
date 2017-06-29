@@ -44,7 +44,7 @@ Global $__GEng_Images[1] = [0]
 ; Return values .: Succes - Objet Image
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: 
+; Remarks .......:
 ; ;==========================================================================================
 #cs
 Function: _GEng_ImageLoad
@@ -56,10 +56,10 @@ Prototype:
 Parameters:
 	sPath - Path the file (supports bmp, gif, jpg, png, tiff, emf)
 	width, height - Size of the image object (default = size of the image file)
-	
+
 	You can load only a rectangle from the image file, use the following parameters to do so
 	You must specify all the next 4 parameters to take a rectangle
-	
+
 	x, y - Top left corners position of the rectangle
 	w, h - Size of the rectangle
 
@@ -77,12 +77,12 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_ImageLoadStream
-; Description ...: 
+; Description ...:
 ; Syntax.........: _GEng_ImageLoadStream($pic, $imgW = Default, $imgH = Default, $x = Default, $y = Default, $w = Default, $h = Default)
-; Parameters ....: 
-; Return values .: 
+; Parameters ....:
+; Return values .:
 ; Author ........: UEZ, ProgAndy
-; Remarks .......: 
+; Remarks .......:
 ; ;==========================================================================================
 #cs
 Function: _GEng_ImageLoadStream
@@ -104,10 +104,10 @@ Thanks:
 
 Example:
 	A function to convert a file to a binary string (Thanks Tlem!)
-	
+
 	You can adapt this function to not re-create the file to the hard drive, and to only
 	procude the binary string needed by _GEng_ImageLoadStream
-	
+
 	(Start code)
 	Func _FileToBinaryString()
 		Local $file = FileOpenDialog("Select File", @DesktopDir, "All (*)")
@@ -148,20 +148,20 @@ Func _GEng_ImageLoadStream($pic, $imgW = Default, $imgH = Default, $x = Default,
 	Local $memBitmap, $len, $tMem, $hImage, $hData, $pData, $hStream, $hBitmapFromStream
     $memBitmap = Binary($pic) ;load image  saved in variable (memory) and convert it to binary
     $len = BinaryLen($memBitmap) ;get length of image
-	
+
     $hData  = _MemGlobalAlloc($len, $GMEM_MOVEABLE) ;allocates movable memory  ($GMEM_MOVEABLE = 0x0002)
     $pData = _MemGlobalLock($hData)  ;translate the handle into a pointer
     $tMem =  DllStructCreate("byte[" & $len & "]", $pData) ;create struct
     DllStructSetData($tMem, 1, $memBitmap) ;fill struct with image data
     _MemGlobalUnlock($hData) ;decrements the lock count  associated with a memory object that was allocated with GMEM_MOVEABLE
-    
+
 	$hStream = _WinAPI_CreateStreamOnHGlobal($pData) ;Creates a stream object that uses an HGLOBAL memory handle to store the stream contents
     $hBitmapFromStream = _GDIPlus_BitmapCreateFromStream($hStream) ;Creates a Bitmap object based on an IStream COM interface
-    
+
 	Local $tVARIANT = DllStructCreate("word vt;word r1;word r2;word r3;ptr data; ptr")
     Local $aCall = DllCall("oleaut32.dll", "long", "DispCallFunc", "ptr", $hStream, "dword", 8 + 8 * @AutoItX64, "dword", 4, "dword", 23, "dword", 0, "ptr", 0, "ptr", 0, "ptr", DllStructGetPtr($tVARIANT))
     $tMem = 0
-	
+
 	Return __GEng_ImageLoadDo($hBitmapFromStream, $imgW, $imgH, $x, $y, $w, $h)
 EndFunc
 
@@ -190,18 +190,6 @@ Func __GEng_Image_DisposeAll()
 		_GDIPlus_BitmapDispose($__GEng_Images[$i])
 	Next
 EndFunc
-
-Func _WinAPI_CreateStreamOnHGlobal($hGlobal = 0, $fDeleteOnRelease = True)
-	Local $aResult = DllCall("ole32.dll", "int", "CreateStreamOnHGlobal", "hwnd", $hGlobal, "int", $fDeleteOnRelease, "ptr*", 0)
-	If @error Then Return SetError(@error, @extended, 0)
-	Return $aResult[3]
-EndFunc   ;==>_WinAPI_CreateStreamOnHGlobal
-
-Func _GDIPlus_BitmapCreateFromStream($pStream)
-	Local $aResult = DllCall($ghGDIPDll, "uint", "GdipCreateBitmapFromStream", "ptr", $pStream, "int*", 0)
-	If @error Then Return SetError(@error, @extended, 0)
-	Return $aResult[2]
-EndFunc   ;==>_GDIPlus_BitmapCreateFromStream
 
 Func __GDIPlus_ImageGetThumbnail($hImg, $iW, $iH)
 	Local $ret = DllCall($ghGDIPDll, "int", "GdipGetImageThumbnail", _

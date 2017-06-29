@@ -1,4 +1,4 @@
-# === GEng_Animation_calltips.txt ===
+ï»¿# === GEng_Animation_calltips.txt ===
 _GEng_Anim_Create (  ) Create an Animation Object (required: #include <GEngin.au3>)
 _GEng_Anim_FrameCount ( ByRef hAnim ) Get the number of frames in an Animation Object (required: #include <GEngin.au3>)
 _GEng_Anim_FrameAdd ( ByRef hAnim , ByRef hImage , iFramDuration [, x [, y [, w [, h]]]] ) Add a frame to an Animation Object (required: #include <GEngin.au3>)
@@ -67,7 +67,7 @@ _GEng_Sprite_Collision ( ByRef hSprite1 , ByRef hSprite2 [, iScrBorderPosition [
 _GEng_Sprite_CollisionScrBorders ( ByRef hSprite [, iDynamique] ) Test collision between a Sprite Object and all screen borders. (required: #include <GEngin.au3>)
 
 # === GEng_Sprite_Dynamics_calltips.txt ===
-_GEng_Sprite_Move ( ByRef hSprite ) Calcule et met à jout position et angle d'un sprite selon ses paramètres dynamiques (required: #include <GEngin.au3>)
+_GEng_Sprite_Move ( ByRef hSprite ) Calcule et met Ã  jout position et angle d'un sprite selon ses paramÃ¨tres dynamiques (required: #include <GEngin.au3>)
 
 # === GEng_Sprite_Get_calltips.txt ===
 _GEng_Sprite_MassGet ( ByRef hSprite ) Get a sprite's mass (required: #include <GEngin.au3>)

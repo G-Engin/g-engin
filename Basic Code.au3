@@ -1,4 +1,4 @@
-#include <GEngin.au3>
+﻿#include <GEngin.au3>
 
 Global $iW = 800, $iH = 600
 

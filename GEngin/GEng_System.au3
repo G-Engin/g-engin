@@ -25,6 +25,8 @@
 
 Enum Step *2 $GEng_Debug_Pens = 1, $GEng_Debug_Sprites, $GEng_Debug_Vectors, $GEng_Debug_Collisions
 
+Global $ghGDIPDll = 'user32.dll'
+
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Start
 ; Description ...: Créer une fenètre d'affichage et lance GEngin
@@ -33,7 +35,7 @@ Enum Step *2 $GEng_Debug_Pens = 1, $GEng_Debug_Sprites, $GEng_Debug_Vectors, $GE
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: 
+; Remarks .......:
 ; ;==========================================================================================
 #cs
 Function: _GEng_Start
@@ -49,11 +51,11 @@ Parameters:
 	iX - The left side of the dialog box. By default (-1), the window is centered. If defined, top must also be defined.
 	iY - The top of the dialog box. Default (-1) is centered.
 	iStyle - defines the style of the window. See GUI Control Styles Appendix (AutoIt3 Doc).
-	
+
 		Use -1 for the default style which includes a combination of *$WS_MINIMIZEBOX*, *$WS_CAPTION*, *$WS_POPUP*, *$WS_SYSMENU* styles.
-		
+
 		Some styles are always included: *$WS_CLIPSIBLINGS*, and *$WS_SYSMENU* if *$WS_MAXIMIZEBOX* or *$WS_SIZEBOX* is specified.
-		
+
 	iExtStyle - defines the extended style of the window.
 		See the Extended Style Table in GuiCreate Doc. -1 is the default.
 
@@ -89,10 +91,10 @@ EndFunc
 ; Name...........: _GEng_Shutdown
 ; Description ...: Stop GEngin, supprime la fenètre d'affichage, et libère toutes les ressources
 ; Syntax.........: _GEng_Shutdown()
-; Parameters ....: 
-; Return values .: 
+; Parameters ....:
+; Return values .:
 ; Author ........: Matwachich
-; Remarks .......: 
+; Remarks .......:
 ; ;==========================================================================================
 #cs
 Function: _GEng_Shutdown
@@ -136,7 +138,7 @@ EndFunc
 ;                  - $GEng_Debug_Sprites = Dessine les sprites
 ;                  - $GEng_Debug_Vectors = Dessine les vecteurs vitesse et accélération
 ;                  - $GEng_Debug_Collisions = Dessine les collisions
-; Return values .: 
+; Return values .:
 ; Author ........: Matwachich
 ; Remarks .......: Le mode débug est surtout utile pour 'voir' les collisions
 ;                  	Quand une collision a lieu, les hit-boxes des sprites en collision s'affichent en rouge
@@ -153,10 +155,10 @@ Prototype:
 
 Parameters:
 	mode - One of the following:
-	
+
 	- *Default* Get the status of debug mode
 	- *0* : Deactivate debug mode
-	
+
 	_Combination of_
 		- *$GEng_Debug_Pens* Only Creates the colors needed to manualy draw with the _GEng_Debug_xxx Functions (parameter $iDbgPen)
 		- *$GEng_Debug_Sprites* Draws the sprites boxes
@@ -169,9 +171,9 @@ Returns:
 
 Remarks:
 	The debug mode is usefull to see the collisions: when a collision occures between two sprites, their hit boxes are displayed in red.
-	
+
 	If the flags $GEng_Debug_Sprites, $GEng_Debug_Vectors and $GEng_Debug_Collisions are set, the flag $GEng_Debug_Pens is automatically set.
-	
+
 	This function calls _GDIPlus_Startup, just life <_GEng_Start>
 #ce
 Func _GEng_SetDebug($mode = Default)
@@ -226,18 +228,6 @@ EndFunc
 ;    $pBits = $Ret[4]
 ;    Return $Ret[0]
 ;EndFunc   ;==>_WinAPI_CreateDIBSection
-
-Func _GDIPlus_GraphicsSetInterpolationMode($hGraphics, $iInterpolationMode)
-	Local $aResult = DllCall($ghGDIPDll, "uint", "GdipSetInterpolationMode", "hwnd", $hGraphics, "int", $iInterpolationMode)
-	If @error Then Return SetError(@error, @extended, False)
-	Return $aResult[0] = 0
-EndFunc   ;==>_GDIPlus_GraphicsSetInterpolationMode
-
-Func _GDIPlus_ImageAttributesCreate()
-	Local $aResult = DllCall($ghGDIPDll, "uint", "GdipCreateImageAttributes", "int*", 0)
-	If @error Then Return SetError(@error, @extended, 0)
-	Return $aResult[1]
-EndFunc   ;==>_GDIPlus_ImageAttributesCreate
 
 Func __GEng_GetBuffer()
 	Local $hBuffer = _GDIPlus_ImageGetGraphicsContext($__GEng_hBitmap)
