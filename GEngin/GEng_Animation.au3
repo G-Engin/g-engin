@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -23,7 +23,7 @@
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Anim_Create
-; Description ...: Créer un objet Animation
+; Description ...: CrÃ©er un objet Animation
 ; Syntax.........: _GEng_Anim_Create()
 ; Parameters ....: Aucun
 ; Return values .: Objet Animation ($oAnim)
@@ -86,11 +86,11 @@ EndFunc
 ; Syntax.........: _GEng_Anim_FrameAdd(ByRef $hAnim, ByRef $hImage, $iFramDuration, $x = Default, $y = Default, $w = Default, $h = Default)
 ; Parameters ....: ByRef $hAnim = Objet Animation
 ;                  ByRef $hImage = Objet Image
-;                  $iFramDuration = Durée de la frame (ms)
-;                  - Optionels: prendre une partie de l'objet Image (idéal pour les SpriteSheets)
-;                  	Doivent TOUS être spécifiés pour être pris en concidération
-;                  $x, $y = coordonnées du point supérieur gauche du rectangle à prendre
-;                  $w, $h = largeur et hauteur du rectangle à prendre
+;                  $iFramDuration = DurÃ©e de la frame (ms)
+;                  - Optionels: prendre une partie de l'objet Image (idÃ©al pour les SpriteSheets)
+;                  	Doivent TOUS Ãªtre spÃ©cifiÃ©s pour Ãªtre pris en concidÃ©ration
+;                  $x, $y = coordonnÃ©es du point supÃ©rieur gauche du rectangle Ã  prendre
+;                  $w, $h = largeur et hauteur du rectangle Ã  prendre
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -149,13 +149,13 @@ EndFunc
 ; Description ...: Modifier une frame d'un Objet Animation
 ; Syntax.........: _GEng_Anim_FrameMod(ByRef $hAnim, $iFrameNumber, ByRef $hImage, $iFramDuration = Default, $x = Default, $y = Default, $w = Default, $h = Default)
 ; Parameters ....: ByRef $hAnim = Objet Animation
-;                  $iFrameNumber = Numéro de la frame à modifier (base 1)
+;                  $iFrameNumber = NumÃ©ro de la frame Ã  modifier (base 1)
 ;                  ByRef $hImage = Objet Image
-;                  $iFramDuration = Durée de la frame (ms)
-;                  - Optionels: prendre une partie de l'objet Image (idéal pour les SpriteSheets)
-;                  	Doivent TOUS être spécifiés pour être pris en concidération
-;                  $x, $y = coordonnées du point supérieur gauche du rectangle à prendre
-;                  $w, $h = largeur et hauteur du rectangle à prendre
+;                  $iFramDuration = DurÃ©e de la frame (ms)
+;                  - Optionels: prendre une partie de l'objet Image (idÃ©al pour les SpriteSheets)
+;                  	Doivent TOUS Ãªtre spÃ©cifiÃ©s pour Ãªtre pris en concidÃ©ration
+;                  $x, $y = coordonnÃ©es du point supÃ©rieur gauche du rectangle Ã  prendre
+;                  $w, $h = largeur et hauteur du rectangle Ã  prendre
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
