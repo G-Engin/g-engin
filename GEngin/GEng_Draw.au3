@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -22,9 +22,9 @@
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_ScrFlush
-; Description ...: Permet d'éffacer l'écran, en lui donnant une couleur
+; Description ...: Permet d'Ã©ffacer l'Ã©cran, en lui donnant une couleur
 ; Syntax.........: _GEng_ScrFlush($iBkColor = 0xFFFFFFFF)
-; Parameters ....: $iBkColor = Couleur avec la quelle remplire l'écran (Defaut = Blanc)
+; Parameters ....: $iBkColor = Couleur avec la quelle remplire l'Ã©cran (Defaut = Blanc)
 ; Return values .: Succes - 1
 ;                  Echec - 0
 ; Author ........: Matwachich
@@ -50,13 +50,13 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_ScrUpdate
-; Description ...: Valider les opération de déssin (copie le hBitmap dans le hGraphic)
+; Description ...: Valider les opÃ©ration de dÃ©ssin (copie le hBitmap dans le hGraphic)
 ; Syntax.........: _GEng_ScrUpdate()
 ; Parameters ....: 
 ; Return values .: Succes - 1
 ;                  Echec - 0
 ; Author ........: Matwachich
-; Remarks .......: Inspiré par "Sinus Scroller By UEZ"
+; Remarks .......: InspirÃ© par "Sinus Scroller By UEZ"
 ; ;==========================================================================================
 #cs
 Function: _GEng_ScrUpdate
@@ -86,7 +86,7 @@ EndFunc
 ; Description ...: 
 ; Syntax.........: _GEng_FPS_Get($iDelay = 1000)
 ; Parameters ....: 
-; Return values .: la valeur du FPS - @extended = temps de génération de la frame passé (ms)
+; Return values .: la valeur du FPS - @extended = temps de gÃ©nÃ©ration de la frame passÃ© (ms)
 ; Author ........: Matwachich
 ; Remarks .......: 
 ; ;==========================================================================================

@@ -13,6 +13,7 @@
 #Region ### Functions ###
 #cs
 - Main Functions
+	_GEng_Sprite_PointGet(ByRef $hSprite, $iImgX, $iImgY, ByRef $x, ByRef $y)
 	_GEng_PointToPoint_Dist($x0, $y0, $x, $y)
 	_GEng_PointToPoint_Angle($x0, $y0, $x, $y)
 	_GEng_PointToPoint_Vector($x0, $y0, $x, $y, $iGrandeur = Default)
