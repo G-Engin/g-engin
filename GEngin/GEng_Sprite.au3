@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -52,9 +52,9 @@ Global Enum _
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_Create
-; Description ...: Créer un Objet Sprite
+; Description ...: CrÃ©er un Objet Sprite
 ; Syntax.........: _GEng_Sprite_Create($hImage = Default)
-; Parameters ....: $hImage = Objet Image à assigner au sprite (Optionel)
+; Parameters ....: $hImage = Objet Image Ã  assigner au sprite (Optionel)
 ;                  	Si Defaut, Objet Sprite vide
 ; Return values .: Objet Sprite
 ; Author ........: Matwachich
@@ -86,20 +86,20 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ImageSet
-; Description ...: Assigne un objet Image à un Objet Sprite
+; Description ...: Assigne un objet Image Ã  un Objet Sprite
 ; Syntax.........: _GEng_Sprite_ImageSet(ByRef $hSprite, ByRef $hImage, $x = Default, $y = Default, $w = Default, $h = Default)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $hImage = Objet Image à assigner
-;                  - Optionels: prendre une partie de l'objet Image (idéal pour les SpriteSheets)
-;                  	Doivent TOUS être spécifiés pour être pris en concidération
-;                  $x, $y = coordonnées du point supérieur gauche du rectangle à prendre
-;                  $w, $h = largeur et hauteur du rectangle à prendre
+;                  $hImage = Objet Image Ã  assigner
+;                  - Optionels: prendre une partie de l'objet Image (idÃ©al pour les SpriteSheets)
+;                  	Doivent TOUS Ãªtre spÃ©cifiÃ©s pour Ãªtre pris en concidÃ©ration
+;                  $x, $y = coordonnÃ©es du point supÃ©rieur gauche du rectangle Ã  prendre
+;                  $w, $h = largeur et hauteur du rectangle Ã  prendre
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Si il n'y avait aucune image associée au sprite lors de l'appel à cette fonction,
-;                  	alors la taille du sprite est initialisé à la taille de l'image assigné
-;                  	(appel à _GEng_Sprite_SizeSet)
+; Remarks .......: Si il n'y avait aucune image associÃ©e au sprite lors de l'appel Ã  cette fonction,
+;                  	alors la taille du sprite est initialisÃ© Ã  la taille de l'image assignÃ©
+;                  	(appel Ã  _GEng_Sprite_SizeSet)
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_ImageSet
@@ -143,7 +143,7 @@ Func _GEng_Sprite_ImageSet(ByRef $hSprite, ByRef $hImage, $x = Default, $y = Def
 		$hSprite[$_gSpr_ImgW] = $hImage[1]
 		$hSprite[$_gSpr_ImgH] = $hImage[2]
 	EndIf
-	; Déjà fait dans _GEng_SpriteSetSize()
+	; DÃ©jÃ  fait dans _GEng_SpriteSetSize()
 	;$hSprite[9] = $hSprite[3]
 	;$hSprite[10] = $hSprite[4]
 	; ---
@@ -155,14 +155,14 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ImageSetRect
-; Description ...: Change le rectangle sélectioné de l'objet image actuellement assigné à l'objet sprite
+; Description ...: Change le rectangle sÃ©lectionÃ© de l'objet image actuellement assignÃ© Ã  l'objet sprite
 ; Syntax.........: _GEng_Sprite_ImageSetRect(ByRef $hSprite, $x, $y, $w, $h, $InitSize = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  - Doivent TOUS être spécifiés pour être pris en concidération
-;                  $x, $y = coordonnées du point supérieur gauche du rectangle à prendre
-;                  $w, $h = largeur et hauteur du rectangle à prendre
-;                  $InitSize = Si 1, la taille du sprite est initialisé à la taille du rectangle
-;                  	sélectioné de l'objet image
+;                  - Doivent TOUS Ãªtre spÃ©cifiÃ©s pour Ãªtre pris en concidÃ©ration
+;                  $x, $y = coordonnÃ©es du point supÃ©rieur gauche du rectangle Ã  prendre
+;                  $w, $h = largeur et hauteur du rectangle Ã  prendre
+;                  $InitSize = Si 1, la taille du sprite est initialisÃ© Ã  la taille du rectangle
+;                  	sÃ©lectionÃ© de l'objet image
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -200,15 +200,15 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_Draw
-; Description ...: Déssine un sprite à l'écran selon ses attribut position
+; Description ...: DÃ©ssine un sprite Ã  l'Ã©cran selon ses attribut position
 ; Syntax.........: _GEng_Sprite_Draw(ByRef $hSprite, $iCalculateMovements = 1)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iCalculateMovements = Si 1, alors tous les mouvements du sprite sont calculé selon ses
-;                  	attribut vitesse, accélération, innertie. et Vitesse, accélération et innertie de rotation
+;                  $iCalculateMovements = Si 1, alors tous les mouvements du sprite sont calculÃ© selon ses
+;                  	attribut vitesse, accÃ©lÃ©ration, innertie. et Vitesse, accÃ©lÃ©ration et innertie de rotation
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Un sprite fix (arrière plan, objet de décore immobile) devrai toujour avoir $iCalculateMovements = 0
+; Remarks .......: Un sprite fix (arriÃ¨re plan, objet de dÃ©core immobile) devrai toujour avoir $iCalculateMovements = 0
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_Draw
@@ -255,14 +255,14 @@ Func _GEng_Sprite_Draw(ByRef $hSprite, $iCalculateMovements = 1)
 		If $hSprite[$_gSpr_UseColorMatrix] Then
 			$ret = _GDIPlus_GraphicsDrawImageRectRectIA($__GEng_hBuffer, $__GEng_Images[$hSprite[$_gSpr_iImg]], _
 						$sheetX, $sheetY, $sheetW, $sheetH, _ ; region de l'image d'origin
-						$posX - $oriX, $posY - $oriY, _ ; position à l'écran
-						$sizeW, $sizeH, _ ; taille à l'écran
+						$posX - $oriX, $posY - $oriY, _ ; position Ã  l'Ã©cran
+						$sizeW, $sizeH, _ ; taille Ã  l'Ã©cran
 						$hSprite[$_gSpr_hImgAttrib])
 		Else
 			$ret = _GDIPlus_GraphicsDrawImageRectRect($__GEng_hBuffer, $__GEng_Images[$hSprite[$_gSpr_iImg]], _
 						$sheetX, $sheetY, $sheetW, $sheetH, _ ; region de l'image d'origin
-						$posX - $oriX, $posY - $oriY, _ ; position à l'écran
-						$sizeW, $sizeH) ; taille à l'écran
+						$posX - $oriX, $posY - $oriY, _ ; position Ã  l'Ã©cran
+						$sizeW, $sizeH) ; taille Ã  l'Ã©cran
 		EndIf
 
 		If $__GEng_Debug <> 0 Then

@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -65,10 +65,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_PosGet
-; Description ...: Récupère la position d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la position d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_PosGet(ByRef $hSprite, ByRef $x, ByRef $y)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Variable qui vont contenir les données récupérées
+;                  $x, $y = Variable qui vont contenir les donnÃ©es rÃ©cupÃ©rÃ©es
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -99,10 +99,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_SizeGet
-; Description ...: Récupère la taille d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la taille d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_SizeGet(ByRef $hSprite, ByRef $x, ByRef $y)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Variable qui vont contenir les données récupérées
+;                  $x, $y = Variable qui vont contenir les donnÃ©es rÃ©cupÃ©rÃ©es
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -133,10 +133,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_OriginGet
-; Description ...: Récupère la position du point d'origine d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la position du point d'origine d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_OriginGet(ByRef $hSprite, ByRef $x, ByRef $y)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Variable qui vont contenir les données récupérées
+;                  $x, $y = Variable qui vont contenir les donnÃ©es rÃ©cupÃ©rÃ©es
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -169,10 +169,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_SpeedGet
-; Description ...: Récupère la vitesse d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la vitesse d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_SpeedGet(ByRef $hSprite, ByRef $x, ByRef $y)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Variable qui vont contenir les données récupérées
+;                  $x, $y = Variable qui vont contenir les donnÃ©es rÃ©cupÃ©rÃ©es
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -203,7 +203,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_MaxSpeedGet
-; Description ...: Récupère la vitesse maximum d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la vitesse maximum d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_MaxSpeedGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de la vitesse
@@ -233,10 +233,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AccelGet
-; Description ...: Récupère l'accélération d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'accÃ©lÃ©ration d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AccelGet(ByRef $hSprite, ByRef $x, ByRef $y)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Variable qui vont contenir les données récupérées
+;                  $x, $y = Variable qui vont contenir les donnÃ©es rÃ©cupÃ©rÃ©es
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -267,7 +267,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_InnertieGet
-; Description ...: Récupère l'innertie d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'innertie d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_InnertieGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de l'innertie
@@ -299,7 +299,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleGet
-; Description ...: Récupère l'angle d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'angle d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleGet(ByRef $hSprite, $iType = 1)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de l'angle (orientation)
@@ -341,14 +341,14 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleOriginGet
-; Description ...: Récupère l'angle origine d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'angle origine d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleOriginGet(ByRef $hSprite, $iType = 1)
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $iType = 1 -> Degres, 2 -> Radians
 ; Return values .: Succes - valeur de la vitesse
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: L'angle origine est utile pour un Sprite dont l'image est orienté vers une autre direction
+; Remarks .......: L'angle origine est utile pour un Sprite dont l'image est orientÃ© vers une autre direction
 ;                  	que la droite
 ; ;==========================================================================================
 #cs
@@ -383,7 +383,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleSpeedGet
-; Description ...: Récupère la vitesse de rotation d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la vitesse de rotation d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleSpeedGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de la vitesse de rotation (Deg/s)
@@ -413,7 +413,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleMaxSpeedGet
-; Description ...: Récupère la vitesse de rotation maximale d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re la vitesse de rotation maximale d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleMaxSpeedGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de la vitesse de rotation maximale
@@ -443,10 +443,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleAccelGet
-; Description ...: Récupère l'accélération de rotation d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'accÃ©lÃ©ration de rotation d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleAccelGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
-; Return values .: Succes - valeur de l'accélération
+; Return values .: Succes - valeur de l'accÃ©lÃ©ration
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
 ; Remarks .......:
@@ -473,7 +473,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleInnertieGet
-; Description ...: Récupère l'innertie de rotation d'un Objet Sprite
+; Description ...: RÃ©cupÃ¨re l'innertie de rotation d'un Objet Sprite
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - valeur de l'innertie
 ;                  Echec - 0 et @error = 1

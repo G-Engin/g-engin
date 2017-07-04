@@ -13,6 +13,7 @@
 #Region ### Functions ###
 #cs
 - Main Functions
+	_GEng_Sprite_MasseSet(ByRef $hSprite, $iMasse)
 	_GEng_Sprite_PosSet(ByRef $hSprite, $x = Default, $y = Default)
 	_GEng_Sprite_SizeSet(ByRef $hSprite, $w = Default, $h = Default)
 	_GEng_Sprite_OriginSet(ByRef $hSprite, $x = Default, $y = Default)
@@ -33,6 +34,9 @@
 	_GEng_Sprite_AngleAccelSet(ByRef $hSprite, $iAngle)
 	_GEng_Sprite_AngleAccelAdd(ByRef $hSprite, $iAngle)
 	_GEng_sprite_AngleInnertieSet(ByRef $hSprite, $iAngle)
+
+	_GEng_Sprite_ColorMatrixTranslate(ByRef $hSprite, $fRed = 0, $fGreen = 0, $fBlue = 0, $fAlpha = 0)
+	_GEng_Sprite_ColorMatrixReset(ByRef $hSprite)
 #ce
 #EndRegion ###
 
@@ -45,8 +49,8 @@
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Une masse de 0 (par défaut lorsqu'un sprite est crée) signifie que le sprite
-;                  	ne sera pas affecté par les collisions dynamiques
+; Remarks .......: Une masse de 0 (par dï¿½faut lorsqu'un sprite est crï¿½e) signifie que le sprite
+;                  	ne sera pas affectï¿½ par les collisions dynamiques
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_MasseSet
@@ -81,7 +85,7 @@ EndFunc
 ; Syntax.........: _GEng_Sprite_PosSet(ByRef $hSprite, $x = Default, $y = Default)
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $x, $y = Nouvelle position
-;                  	Si une valeur est laissé par défaut, elle n'est pas modifié
+;                  	Si une valeur est laissï¿½ par dï¿½faut, elle n'est pas modifiï¿½
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -118,12 +122,12 @@ EndFunc
 ; Syntax.........: _GEng_Sprite_SizeSet(ByRef $hSprite, $w = Default, $h = Default)
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $w, $h = Nouvelle valeurs de taille
-;                  	Une valeur laissé par défaut n'est pas changé
-;                  	Une valeur négative se vera attribué la taille de l'image assigné au sprite
+;                  	Une valeur laissï¿½ par dï¿½faut n'est pas changï¿½
+;                  	Une valeur nï¿½gative se vera attribuï¿½ la taille de l'image assignï¿½ au sprite
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Apres setSize, origin est faussé
+; Remarks .......: Apres setSize, origin est faussï¿½
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_SizeSet
@@ -175,11 +179,11 @@ EndFunc
 ; Syntax.........: _GEng_Sprite_OriginSet(ByRef $hSprite, $x = Default, $y = Default)
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $x, $y = Position du point d'origine
-;                  	Une valeur laissé par défaut n'est pas modifié
+;                  	Une valeur laissï¿½ par dï¿½faut n'est pas modifiï¿½
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Cette fonction donne une valeur précise au point d'origine
+; Remarks .......: Cette fonction donne une valeur prï¿½cise au point d'origine
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_OriginSet
@@ -214,10 +218,10 @@ EndFunc
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $eOrigine = Une des Constantes suivante:
 ;                  	$GEng_Origin_Mid = Milieu de l'image (Middle)
-;                  	$GEng_Origin_TL = Coin supérieur gauche de l'image (Top Left)
-;                  	$GEng_Origin_TR = Coin supérieur droit de l'image (Top Right)
-;                  	$GEng_Origin_BL = Coin inférieur gauche de l'image (Bottom Left)
-;                  	$GEng_Origin_BR = Coin supérieur droit de l'image (Bottom Right)
+;                  	$GEng_Origin_TL = Coin supï¿½rieur gauche de l'image (Top Left)
+;                  	$GEng_Origin_TR = Coin supï¿½rieur droit de l'image (Top Right)
+;                  	$GEng_Origin_BL = Coin infï¿½rieur gauche de l'image (Bottom Left)
+;                  	$GEng_Origin_BR = Coin supï¿½rieur droit de l'image (Bottom Right)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -268,16 +272,16 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleOriginSet
-; Description ...: Modifie la valeur de l'angle d'origine d'un Sprite (la direction avant de l'image, 0°)
+; Description ...: Modifie la valeur de l'angle d'origine d'un Sprite (la direction avant de l'image, 0ï¿½)
 ; Syntax.........: _GEng_Sprite_AngleOriginSet(ByRef $hSprite, $iAngle)
 ; Parameters ....: $hSprite = Objet Sprite
 ;                  $iAngle = Valeur de l'angle (n'importe quelle valeur)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Exemple: un Sprite contenant l'image d'un avion orienté vers le haut aura un angle
+; Remarks .......: Exemple: un Sprite contenant l'image d'un avion orientï¿½ vers le haut aura un angle
 ;                  	d'origine de -90 ou 270
-;                  L'utilité est que un _GEng_Sprite_AngleSet sera dirigé vers l'avant de l'avion
+;                  L'utilitï¿½ est que un _GEng_Sprite_AngleSet sera dirigï¿½ vers l'avant de l'avion
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_AngleOriginSet
@@ -296,10 +300,10 @@ Returns:
 
 Remarks:
 	The angular origin is the direction of what will be concidered as the front of a Sprite,
-	or it's 0° direction.
+	or it's 0ï¿½ direction.
 	
 	For example: if the picture of your sprite is a space ship turned up, you must set the
-	angular origin to -90° or 270°.
+	angular origin to -90ï¿½ or 270ï¿½.
 #ce
 Func _GEng_Sprite_AngleOriginSet(ByRef $hSprite, $iAngle) ; en degres
 	If Not __GEng_Sprite_IsSprite($hSprite) Then Return SetError(1, 0, 0)
@@ -318,9 +322,9 @@ EndFunc
 ; Description ...: Modifie la vitesse et la vitesse maximale d'un Sprite
 ; Syntax.........: _GEng_Sprite_SpeedSet(ByRef $hSprite, $x = Default, $y = Default, $max = Default)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Valeur de la vitesse sur les différents axes
+;                  $x, $y = Valeur de la vitesse sur les diffï¿½rents axes
 ;                  $max = Vitesse maximale
-;                  	Une valeur laissé par défaut ne sera pas modifié
+;                  	Une valeur laissï¿½ par dï¿½faut ne sera pas modifiï¿½
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -360,10 +364,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_SpeedAdd
-; Description ...: Additione les valeur en paramètres à la vitesse actuelle d'un Sprite
+; Description ...: Additione les valeur en paramï¿½tres ï¿½ la vitesse actuelle d'un Sprite
 ; Syntax.........: _GEng_Sprite_SpeedAdd(ByRef $hSprite, $x = 0, $y = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Valeur à ajouter (par défaut: 0)
+;                  $x, $y = Valeur ï¿½ ajouter (par dï¿½faut: 0)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -378,7 +382,7 @@ Prototype:
 
 Parameters:
 	$hSprite - Sprite Object
-	$x, $y - Values to add (nagtive to substract)
+	$x, $y - Values to add (negative to substract)
 
 Returns:
 	Succes - 1
@@ -395,11 +399,11 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AccelSet
-; Description ...: Modifie l'accélération d'un sprite
+; Description ...: Modifie l'accï¿½lï¿½ration d'un sprite
 ; Syntax.........: _GEng_Sprite_AccelSet(ByRef $hSprite, $x = Default, $y = Default)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Valeur de l'accélération sur les différents axes
-;                  	Une valeur laissé par défaut ne sera pas modifié
+;                  $x, $y = Valeur de l'accï¿½lï¿½ration sur les diffï¿½rents axes
+;                  	Une valeur laissï¿½ par dï¿½faut ne sera pas modifiï¿½
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -431,10 +435,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AccelAdd
-; Description ...: Additione les valeur en paramètres à l'accélération actuelle d'un Sprite
+; Description ...: Additione les valeur en paramï¿½tres ï¿½ l'accï¿½lï¿½ration actuelle d'un Sprite
 ; Syntax.........: _GEng_Sprite_AccelAdd(ByRef $hSprite, $x = 0, $y = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $x, $y = Valeur à ajouter (par défaut: 0)
+;                  $x, $y = Valeur ï¿½ ajouter (par dï¿½faut: 0)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -449,7 +453,7 @@ Prototype:
 
 Parameters:
 	$hSprite - Sprite Object
-	$x, $y - Values to add (nagtive to substract)
+	$x, $y - Values to add (negative to substract)
 
 Returns:
 	Succes - 1
@@ -542,10 +546,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleAdd
-; Description ...: Additione la valeur passé en paramètre à l'angle actuel d'un Sprite
+; Description ...: Additione la valeur passï¿½ en paramï¿½tre ï¿½ l'angle actuel d'un Sprite
 ; Syntax.........: _GEng_Sprite_AngleAdd(ByRef $hSprite, $iAngle = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iAngle = Valeur à ajouter
+;                  $iAngle = Valeur ï¿½ ajouter
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -621,10 +625,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleSpeedAdd
-; Description ...: Ajoute la valeur en paramètre à la vitesse de rotation actuelle d'un Sprite
+; Description ...: Ajoute la valeur en paramï¿½tre ï¿½ la vitesse de rotation actuelle d'un Sprite
 ; Syntax.........: _GEng_Sprite_AngleSpeedAdd(ByRef $hSprite, $iAngle = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iAngle = Valeur à ajouter
+;                  $iAngle = Valeur ï¿½ ajouter
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -654,11 +658,11 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleAccelSet
-; Description ...: Modifie l'accélération de rotation d'un objet Sprite
+; Description ...: Modifie l'accï¿½lï¿½ration de rotation d'un objet Sprite
 ; Syntax.........: _GEng_Sprite_AngleAccelSet(ByRef $hSprite, $iAngle = Default)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iAngle = Accélération de rotation
-;                  	Si laissé par défaut, ne sera pas modifiée
+;                  $iAngle = Accï¿½lï¿½ration de rotation
+;                  	Si laissï¿½ par dï¿½faut, ne sera pas modifiï¿½e
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -688,10 +692,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AngleAccelAdd
-; Description ...: Additione la valeur en paramètre à l'accélération de rotation actuelle d'un Sprite
+; Description ...: Additione la valeur en paramï¿½tre ï¿½ l'accï¿½lï¿½ration de rotation actuelle d'un Sprite
 ; Syntax.........: _GEng_Sprite_AngleAccelAdd(ByRef $hSprite, $iAngle = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iAngle = Valeur à ajouter
+;                  $iAngle = Valeur ï¿½ ajouter
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -762,16 +766,16 @@ EndFunc
 ; Description ...: Modifie les composantes des couleurs de l'image d'un Objet Sprite
 ; Syntax.........: _GEng_Sprite_ColorMatrixTranslate(ByRef $hSprite, $fRed = 0, $fGreen = 0, $fBlue = 0, $fAlpha = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $fRed = Pourcentage à ajouter/soustraire à la composante ROUGE
-;                  $fGreen = Pourcentage à ajouter/soustraire à la composante VERTE
-;                  $fBlue = Pourcentage à ajouter/soustraire à la composante BLEU
-;                  $fAlpha = Pourcentage à ajouter/soustraire à la composante ALPHA (Transparence)
+;                  $fRed = Pourcentage ï¿½ ajouter/soustraire ï¿½ la composante ROUGE
+;                  $fGreen = Pourcentage ï¿½ ajouter/soustraire ï¿½ la composante VERTE
+;                  $fBlue = Pourcentage ï¿½ ajouter/soustraire ï¿½ la composante BLEU
+;                  $fAlpha = Pourcentage ï¿½ ajouter/soustraire ï¿½ la composante ALPHA (Transparence)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Exemple: $fRed = 0.5 ajoute 50% à la composante rouge, 1.0 ajoute 100%, un nombre supérieur
-;                  	à 1.0 ajoute aussi 100%, un nombre négatif soustrait à la composante en question
-;                  Cette fonction double le temps nécessaire au dessin du sprite (_GEng_Sprite_Draw)
+; Remarks .......: Exemple: $fRed = 0.5 ajoute 50% ï¿½ la composante rouge, 1.0 ajoute 100%, un nombre supï¿½rieur
+;                  	ï¿½ 1.0 ajoute aussi 100%, un nombre nï¿½gatif soustrait ï¿½ la composante en question
+;                  Cette fonction double le temps nï¿½cessaire au dessin du sprite (_GEng_Sprite_Draw)
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_ColorMatrixTranslate
@@ -811,12 +815,12 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ColorMatrixSet
-; Description ...: Réinitialise la matrice couleur d'un objet Sprite
+; Description ...: Rï¿½initialise la matrice couleur d'un objet Sprite
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Cette fonction annule le ralentissement causé par _GEng_Sprite_ColorMatrixTranslate
+; Remarks .......: Cette fonction annule le ralentissement causï¿½ par _GEng_Sprite_ColorMatrixTranslate
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_ColorMatrixReset
@@ -843,7 +847,7 @@ Func _GEng_Sprite_ColorMatrixReset(ByRef $hSprite)
 	$hSprite[$_gSpr_ColorMatrixPtr] = DllStructGetPtr($hSprite[$_gSpr_ColorMatrix])
 	_GDIPlus_ImageAttributesSetColorMatrix($hSprite[$_gSpr_hImgAttrib], 0, True, $hSprite[$_gSpr_ColorMatrixPtr])
 	; ---
-	$hSprite[$_gSpr_UseColorMatrix] = 0 ; Libère des ressources
+	$hSprite[$_gSpr_UseColorMatrix] = 0 ; Libï¿½re des ressources
 	; ---
 	Return 1
 EndFunc

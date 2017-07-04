@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -27,14 +27,14 @@
 ; Description ...: 
 ; Syntax.........: _GEng_Sprite_AnimRewind(ByRef $hSprite, $iFrame = 1)
 ; Parameters ....: $hSprite = Objet sprite
-;                  $iFrame = Frame à laquelle initialiser le sprite (voir remarque)
-;                  	Par défaut: 1
+;                  $iFrame = Frame Ã  laquelle initialiser le sprite (voir remarque)
+;                  	Par dÃ©faut: 1
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Doit être appeler à la fin de l'animation d'un sprite, pour que la prochaine fois
-;                  	que ce sprite est animé par _GEng_Sprite_Animate, l'animation commence à la frame
-;                  	spécifié dans cette fonction (par défaut 1)
+; Remarks .......: Doit Ãªtre appeler Ã  la fin de l'animation d'un sprite, pour que la prochaine fois
+;                  	que ce sprite est animÃ© par _GEng_Sprite_Animate, l'animation commence Ã  la frame
+;                  	spÃ©cifiÃ© dans cette fonction (par dÃ©faut 1)
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_AnimRewind
@@ -66,20 +66,20 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_Animate
-; Description ...: Anime un Sprite avec l'objet animation spécifié
+; Description ...: Anime un Sprite avec l'objet animation spÃ©cifiÃ©
 ; Syntax.........: _GEng_Sprite_Animate(ByRef $hSprite, ByRef $hAnim, $iStopFrame = Default)
 ; Parameters ....: $hSprite = Objet sprite
 ;                  $hAnim = Objet Animation
-;                  $iStopFrame = Lorsque l'animation arrive à cette frame, la fonction retourne -1
-;                  	Idéal pour faire en sorte qu'une animation ne s'exécute qu'un nombre défini de tours
+;                  $iStopFrame = Lorsque l'animation arrive Ã  cette frame, la fonction retourne -1
+;                  	IdÃ©al pour faire en sorte qu'une animation ne s'exÃ©cute qu'un nombre dÃ©fini de tours
 ;                  	(Voir remarques)
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
-;                  Spécial: Frame $iStopFrame atteinte -> -1
+;                  SpÃ©cial: Frame $iStopFrame atteinte -> -1
 ; Author ........: Matwachich
 ; Remarks .......: Quand StopFrame est atteinte, la fonction retourne -1
 ; 						Si l'animation commence par la frame 1 et que vous mettez comme StopFrame 1,
-; 						la fonction ne s'arrétera qu'après avoir fait un tour, et pas des le début
+; 						la fonction ne s'arrÃ©tera qu'aprÃ¨s avoir fait un tour, et pas des le dÃ©but
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_Animate
@@ -143,7 +143,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AnimDelayMultiplierGet
-; Description ...: Récupère la valeur actuelle du coeficient de multiplication de la duré des frame d'animation
+; Description ...: RÃ©cupÃ¨re la valeur actuelle du coeficient de multiplication de la durÃ© des frame d'animation
 ; Syntax.........: _GEng_Sprite_AnimDelayMultiplierGet(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet sprite
 ; Return values .: Succes - 1
@@ -173,10 +173,10 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_AnimDelayMultiplierSet
-; Description ...: Assigne une valeur au coeficient de multiplication de la duré des frame d'animation
+; Description ...: Assigne une valeur au coeficient de multiplication de la durÃ© des frame d'animation
 ; Syntax.........: _GEng_Sprite_AnimDelayMultiplierSet(ByRef $hSprite, $iVal)
 ; Parameters ....: $hSprite = Objet sprite
-;                  $iVal = Valeur à assigner
+;                  $iVal = Valeur Ã  assigner
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich

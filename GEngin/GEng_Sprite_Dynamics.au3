@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -18,14 +18,14 @@
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_Move
-; Description ...: Calcule et met à jout position et angle d'un sprite selon ses paramètres dynamiques
+; Description ...: Calcule et met Ã  jout position et angle d'un sprite selon ses paramÃ¨tres dynamiques
 ; Syntax.........: _GEng_Sprite_Move(ByRef $hSprite)
 ; Parameters ....: $hSprite = Objet Sprite
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Cette fonction est automatiquement appelé par _GEng_Sprite_Draw si le flag correspondant
-;                  	est bien mis à 1. Il est donc, inutile de l'appeler vous même
+; Remarks .......: Cette fonction est automatiquement appelÃ© par _GEng_Sprite_Draw si le flag correspondant
+;                  	est bien mis Ã  1. Il est donc, inutile de l'appeler vous mÃªme
 ; ;==========================================================================================
 Func _GEng_Sprite_Move(ByRef $hSprite)
 	If Not __GEng_Sprite_IsSprite($hSprite) Then Return SetError(1, 0, 0)
@@ -57,7 +57,7 @@ Func _GEng_Sprite_Move(ByRef $hSprite)
 	If $rotVit <> 0 Then
 		_GEng_Sprite_AngleSet($hSprite, $currAngle + ($rotVit * $ms))
 	EndIf
-	; --- Accélération
+	; --- AccÃ©lÃ©ration
 	If $rotAccel <> 0 Then
 		$hSprite[$_gSpr_AngleSpeed] += $rotAccel * $ms
 	EndIf
@@ -76,12 +76,12 @@ Func _GEng_Sprite_Move(ByRef $hSprite)
 	; ##############################################################
 	
 	Local $posX = $hSprite[$_gSpr_PosX], $posY = $hSprite[$_gSpr_PosY] ; Position actuelle
-	Local $accelX = $hSprite[$_gSpr_AccelX], $accelY = $hSprite[$_gSpr_AccelY] ; Accélération
+	Local $accelX = $hSprite[$_gSpr_AccelX], $accelY = $hSprite[$_gSpr_AccelY] ; AccÃ©lÃ©ration
 	Local $accelGrand = __GEng_VectorGrandeur($accelX, $accelY)
-	;If $accelGrand Then ConsoleWrite("> Accélération: " & $accelX & "	" & $accelY & "	(" & $accelGrand & ")" & @CRLF)
+	;If $accelGrand Then ConsoleWrite("> AccÃ©lÃ©ration: " & $accelX & "	" & $accelY & "	(" & $accelGrand & ")" & @CRLF)
 	; ---
 	
-	; Applique l'accélération
+	; Applique l'accÃ©lÃ©ration
 	$hSprite[$_gSpr_SpeedX] += $accelX * $ms
 	$hSprite[$_gSpr_SpeedY] += $accelY * $ms
 	Local $vitGrand = __GEng_VectorGrandeur($hSprite[$_gSpr_SpeedX], $hSprite[$_gSpr_SpeedY])
@@ -126,7 +126,7 @@ Func _GEng_Sprite_Move(ByRef $hSprite)
 	
 	; ##############################################################
 	
-	; Réinitialisation du timer
+	; RÃ©initialisation du timer
 	$hSprite[$_gSpr_MoveTimer] = TimerInit()
 	; ---
 	Return 1

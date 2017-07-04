@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+ï»¿#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -22,11 +22,11 @@
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ExtInfoAdd
-; Description ...: Attache une variable à un sprite
+; Description ...: Attache une variable Ã  un sprite
 ; Syntax.........: _GEng_Sprite_ExtInfoAdd(ByRef $hSprite, $vInfo)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $vInfo = Valeur à attaché
-; Return values .: Succes - Index de la valeur attaché
+;                  $vInfo = Valeur Ã  attachÃ©
+; Return values .: Succes - Index de la valeur attachÃ©
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
 ; Remarks .......: par exemple: points de vie, nom du personnage ...
@@ -60,11 +60,11 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ExtInfoSet
-; Description ...: Modifie la valeur d'une variable attaché à un sprite
+; Description ...: Modifie la valeur d'une variable attachÃ© Ã  un sprite
 ; Syntax.........: _GEng_Sprite_ExtInfoSet(ByRef $hSprite, $iIndex, $vInfo)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iIndex = Index de la valeur à modifier (retourné par _GEng_Sprite_ExtInfoAdd)
-;                  $vInfo = Valeur à attaché
+;                  $iIndex = Index de la valeur Ã  modifier (retournÃ© par _GEng_Sprite_ExtInfoAdd)
+;                  $vInfo = Valeur Ã  attachÃ©
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -98,11 +98,11 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_ExtInfoGet
-; Description ...: Récupère un valeur attaché à un sprite
+; Description ...: RÃ©cupÃ¨re un valeur attachÃ© Ã  un sprite
 ; Syntax.........: _GEng_Sprite_ExtInfoGet(ByRef $hSprite, $iIndex)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iIndex = Index de la valeur à modifier (retourné par _GEng_Sprite_ExtInfoAdd)
-; Return values .: Succes - la valeur attaché
+;                  $iIndex = Index de la valeur Ã  modifier (retournÃ© par _GEng_Sprite_ExtInfoAdd)
+; Return values .: Succes - la valeur attachÃ©
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
 ; Remarks........:

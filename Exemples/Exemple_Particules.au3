@@ -24,10 +24,10 @@ Global $angleMax = 359, $angleMin = 0; deg
 Global $lifeMax = 450, $lifeMin = 350; ms
 Global $partsRotationMax = 1200, $partsRotationMin = 1000
 
-; Choix de la particules: le fichier _File_particles_png() est composé de 16 particules de taille 32x32
+; Choix de la particules: le fichier _File_particles_png() est composï¿½ de 16 particules de taille 32x32
 ; il s'agit au fait du fichier de particules fourni avec le moteur 2D HGE
 ; (http://read.pudn.com/downloads192/sourcecode/game/904807/HGE%20Map%20Tutorial/Debug/gfx/particles.png)
-; pour en choisir une, faites varier $partX et $partY de 0 à 3 (4 x 4 = 16 possibilitées)
+; pour en choisir une, faites varier $partX et $partY de 0 ï¿½ 3 (4 x 4 = 16 possibilitï¿½es)
 Global $partX = 0, $partY = 0
 
 $img = _GEng_ImageLoadStream(_File_particles_png(), $partsTailleX, $partsTailleY, $partX * 32, $partY * 32, 32, 32)

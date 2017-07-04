@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+Ôªø#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -30,27 +30,27 @@
 #EndRegion ###
 
 
-; pour les tests de collision avec les bord de la fenËtre
+; pour les tests de collision avec les bord de la fen√®tre
 Global $GEng_ScrBorder_Top = 1, $GEng_ScrBorder_Bot = 2, $GEng_ScrBorder_Left = 3, $GEng_ScrBorder_Right = 4
 
-; $iType: 0 - point, 1 - CarrÈ, 2 - Ellipse
+; $iType: 0 - point, 1 - Carr√©, 2 - Ellipse
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_CollisionSet
-; Description ...: SpÈcifie la forme et la taille de la hit-box d'un sprite
+; Description ...: Sp√©cifie la forme et la taille de la hit-box d'un sprite
 ; Syntax.........: _GEng_Sprite_CollisionSet(ByRef $hSprite, $iType, $x = Default, $y = Default, $w = Default, $h = Default)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iType = Forme de la hit-box, dont dÈpend $x, $y, $w, $h
+;                  $iType = Forme de la hit-box, dont d√©pend $x, $y, $w, $h
 ;                  	0 - Point
-;                  		$x, $y = CoordonnÈes du point (par dÈfaut: Point d'origine du sprite)
-;                  		$w, $h = pas pris en concidÈration
+;                  		$x, $y = Coordonn√©es du point (par d√©faut: Point d'origine du sprite)
+;                  		$w, $h = pas pris en concid√©ration
 ;                  	1 - Rectangle
-;                  		$x, $y = CoordonnÈes du point supÈrieur gauche du rectangle (par dÈfaut: 0, 0)
-;                  					(Par rapport au sprite, pas ‡ l'Ècran)
-;                  		$w, $h = largeur et hauteur du rectangle (par dÈfaut: Largeur et hauteur du sprite)
+;                  		$x, $y = Coordonn√©es du point sup√©rieur gauche du rectangle (par d√©faut: 0, 0)
+;                  					(Par rapport au sprite, pas √† l'√©cran)
+;                  		$w, $h = largeur et hauteur du rectangle (par d√©faut: Largeur et hauteur du sprite)
 ;                  	2 - Cercle
-;                  		$x, $y = CoordonnÈes du centre du cercle (par dÈfaut: Point d'origine du sprite)
-;                  		$w = Rayon du cercle (par dÈfaut: (Largeur + Hauteur)/4)
-;                  		$h = pas pris en concidÈration
+;                  		$x, $y = Coordonn√©es du centre du cercle (par d√©faut: Point d'origine du sprite)
+;                  		$w = Rayon du cercle (par d√©faut: (Largeur + Hauteur)/4)
+;                  		$h = pas pris en concid√©ration
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
@@ -107,7 +107,7 @@ Func _GEng_Sprite_CollisionSet(ByRef $hSprite, $iType, $x = Default, $y = Defaul
 		Return 1
 	EndIf
 	; ---
-	; CarrÈ
+	; Carr√©
 	If $iType = 1 Then
 		If $x <> Default And $y <> Default And $w <> Default And $h <> Default Then
 			$hSprite[$_gSpr_CollX] = $x
@@ -151,24 +151,24 @@ EndFunc
 ; Syntax.........: _GEng_Sprite_Collision(ByRef $hSprite1, ByRef $hSprite2, $iScrBorderPosition = 0, $iDynamique = 0, $iPrecision = 0)
 ; Parameters ....: $hSprite1 = Objet Sprite
 ;                  $hSprite2 = Objet Sprite OU une de ces constantes:
-;                  	$GEng_ScrBorder_Top -> Bord supÈrieur de l'Ècran
-;                  	$GEng_ScrBorder_Bot -> Bord infÈrieur
+;                  	$GEng_ScrBorder_Top -> Bord sup√©rieur de l'√©cran
+;                  	$GEng_ScrBorder_Bot -> Bord inf√©rieur
 ;                  	$GEng_ScrBorder_Left -> Bord gauche
 ;                  	$GEng_ScrBorder_Right -> Bord droit
-;                  $iScrBorderPosition = Distance entre le bord rÈel de l'Ècran, et la ligne limite de collision
-;                  $iDynamique = 1 -> Calcules dynamique des collision (collision Èlastique)
-;                  			  0 -> N'influence pas le mouvement des objets en collision (Par dÈfaut)
-;                  $iPrecision = DegrÈ de prÈcision dans les collision dynamiques. ne l'augmentez que si
-;                  	vos sprites se collent l'un ‡ l'autre lors d'une collision.
+;                  $iScrBorderPosition = Distance entre le bord r√©el de l'√©cran, et la ligne limite de collision
+;                  $iDynamique = 1 -> Calcules dynamique des collision (collision √©lastique)
+;                  			  0 -> N'influence pas le mouvement des objets en collision (Par d√©faut)
+;                  $iPrecision = Degr√© de pr√©cision dans les collision dynamiques. ne l'augmentez que si
+;                  	vos sprites se collent l'un √† l'autre lors d'une collision.
 ; Return values .: Succes - 1
 ;                  Echec - 0 et @error = 1
 ; Author ........: Matwachich
-; Remarks .......: Le calcule de collision dynamique (avec $iPrecision = 10) prend 8 ‡ 20 fois plus de temps 
-;                  	qu'une dÈtection uniquement (passe de 0.15 ms ‡ au max: 3 ms) selon la vitesse et l'angle
+; Remarks .......: Le calcule de collision dynamique (avec $iPrecision = 10) prend 8 √† 20 fois plus de temps 
+;                  	qu'une d√©tection uniquement (passe de 0.15 ms √† au max: 3 ms) selon la vitesse et l'angle
 ;                  	de collision des sprites
-;                  Le systËme de collision dynamqie est plus que rudimentaire, il arrive qu'il bug
-;                  	(sprites qui se collent, collision manquÈe...). A term, il est possible
-;                  	qu'une bibliothËque physique externe soit exploitÈe par G-Engin
+;                  Le syst√®me de collision dynamqie est plus que rudimentaire, il arrive qu'il bug
+;                  	(sprites qui se collent, collision manqu√©e...). A term, il est possible
+;                  	qu'une biblioth√®que physique externe soit exploit√©e par G-Engin
 ; ;==========================================================================================
 #cs
 Function: _GEng_Sprite_Collision
@@ -186,7 +186,7 @@ Parameters:
 		- *$GEng_ScrBorder_Left* -> Left screen edge
 		- *$GEng_ScrBorder_Right* -> Right screen edge
 	
-	$iScrBorderPosition - Distance between the screen edge and the collision ligne
+	$iScrBorderPosition - Distance between the screen edge and the collision line
 	$iDynamique - If TRUE, then the 2 tested sprites will collide dynamically
 	$iPrecision - Defines the precision of the dynamic collision anti-bugs algorithm, 
 		high values can really slow your program, so increase only if you encounter bugs.
@@ -210,11 +210,11 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Sprite_CollisionScrBorders
-; Description ...: Test la collision entre un sprite et tous les bords de l'Ècran
+; Description ...: Test la collision entre un sprite et tous les bords de l'√©cran
 ; Syntax.........: _GEng_Sprite_CollisionScrBorders(ByRef $hSprite, $iDynamique = 0)
 ; Parameters ....: $hSprite = Objet Sprite
-;                  $iDynamique = 1 -> Calcules dynamique des collision (collision Èlastique)
-;                  			  0 -> N'influence pas le mouvement des objets en collision (Par dÈfaut)
+;                  $iDynamique = 1 -> Calcules dynamique des collision (collision √©lastique)
+;                  			  0 -> N'influence pas le mouvement des objets en collision (Par d√©faut)
 ; Return values .: Succes
 ;                  	Si collision:
 ;                  	$GEng_ScrBorder_Top, $GEng_ScrBorder_Bot, $GEng_ScrBorder_Left, $GEng_ScrBorder_Right
@@ -395,12 +395,12 @@ EndFunc
 
 #cs
 	// Calcul de la collision entre 2 boules 
-	// de mÍme masse et de rayon r en 2D (ex: boules de billard)
-	// Les boules sont positionnÈes au point de contact
-	// (m.x,m.y) = centre de la boule m (repËre de l'image)
-	// (m.vx,m.vy) = vitesse de la boule m avant le choc (repËre de l'image)
+	// de m√™me masse et de rayon r en 2D (ex: boules de billard)
+	// Les boules sont positionn√©es au point de contact
+	// (m.x,m.y) = centre de la boule m (rep√®re de l'image)
+	// (m.vx,m.vy) = vitesse de la boule m avant le choc (rep√®re de l'image)
 
-	// Calcul de la base orthonormÈe (n,g)
+	// Calcul de la base orthonorm√©e (n,g)
 	// n est perpendiculaire au plan de collision, g est tangent
 	double nx = (m2.x - m1.x)/(2*r);
 	double ny = (m2.y - m1.y)/(2*r);
@@ -413,8 +413,8 @@ EndFunc
 	double v2n = nx*m2.vx + ny*m2.vy;
 	double v2g = gx*m2.vx + gy*m2.vy;
 
-	// Permute les coordonnÈes n et conserve la vitesse tangentielle
-	// ExÈcute la transformation inverse (base orthonormÈe => matrice transposÈe)
+	// Permute les coordonn√©es n et conserve la vitesse tangentielle
+	// Ex√©cute la transformation inverse (base orthonorm√©e => matrice transpos√©e)
 	m1.vx = nx*v2n +  gx*v1g;
 	m1.vy = ny*v2n +  gy*v1g;
 	m2.vx = nx*v1n +  gx*v2g;
@@ -451,25 +451,25 @@ Func __GEng_SpriteCheckCollision(ByRef $hSprite1, ByRef $hSprite2, $iScrBorderPo
 			$y2 = -100 + $iScrBorderPosition
 			$w2 = $__GEng_WinW
 			$h2 = 101
-			$type2 = 1 ; Car les bords de l'Ècran sont assimilÈs ‡ un carrÈ
+			$type2 = 1 ; Car les bords de l'√©cran sont assimil√©s √† un carr√©
 		Case $GEng_ScrBorder_Bot
 			$x2 = 0
 			$y2 = $__GEng_WinH - (1 + $iScrBorderPosition)
 			$w2 = $__GEng_WinW
 			$h2 = 101
-			$type2 = 1 ; Car les bords de l'Ècran sont assimilÈs ‡ un carrÈ
+			$type2 = 1 ; Car les bords de l'√©cran sont assimil√©s √† un carr√©
 		Case $GEng_ScrBorder_Left
 			$x2 = -100
 			$y2 = 0
 			$w2 = 101 + $iScrBorderPosition
 			$h2 = $__GEng_WinH
-			$type2 = 1 ; Car les bords de l'Ècran sont assimilÈs ‡ un carrÈ
+			$type2 = 1 ; Car les bords de l'√©cran sont assimil√©s √† un carr√©
 		Case $GEng_ScrBorder_Right
 			$x2 = $__GEng_WinW - (1 + $iScrBorderPosition)
 			$y2 = 0
 			$w2 = 101
 			$h2 = $__GEng_WinH
-			$type2 = 1 ; Car les bords de l'Ècran sont assimilÈs ‡ un carrÈ
+			$type2 = 1 ; Car les bords de l'√©cran sont assimil√©s √† un carr√©
 		Case Else
 			If Not __GEng_Sprite_IsSprite($hSprite2) Then Return SetError(1, 0, 0)
 			; ---
@@ -528,7 +528,7 @@ Func __GEng_SpriteCheckCollision(ByRef $hSprite1, ByRef $hSprite2, $iScrBorderPo
 	EndIf
 	; ---
 	
-	; SI: il y ‡ un cercle
+	; SI: il y √† un cercle
 	If $type1 = 2 Then
 		Return __GEng_CircleVsRect($x1, $y1, $w1, _
 									$x2, $y2, $w2, $h2)

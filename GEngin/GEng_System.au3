@@ -1,4 +1,4 @@
-#cs ----------------------------------------------------------------------------
+Ôªø#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.6.1
  Author:         Matwachich
@@ -29,7 +29,7 @@ Global $ghGDIPDll = 'user32.dll'
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Start
-; Description ...: CrÈer une fenËtre d'affichage et lance GEngin
+; Description ...: Cr√©er une fen√®tre d'affichage et lance GEngin
 ; Syntax.........: _GEng_Start($sTitle, $iW, $iH, $iX = -1, $iY = -1, $iStyle = -1, $iExtStyle = -1)
 ; Parameters ....: Idem GuiCreate()
 ; Return values .: Succes - 1
@@ -78,7 +78,7 @@ Func _GEng_Start($sTitle, $iW, $iH, $iX = -1, $iY = -1, $iStyle = -1, $iExtStyle
 	$__GEng_hBitmap = _GDIPlus_BitmapCreateFromGraphics($__GEng_WinW, $__GEng_WinH, $__GEng_hGraphic)
 	$__GEng_hBuffer = __GEng_GetBuffer()
 	; ---
-	_GDIPlus_GraphicsSetInterpolationMode($__GEng_hGraphic, 7) ; je l'ajoute sans vraiement voir de rÈsultat!
+	_GDIPlus_GraphicsSetInterpolationMode($__GEng_hGraphic, 7) ; je l'ajoute sans vraiement voir de r√©sultat!
 	DllCall($ghGDIPDll, "uint", "GdipSetTextRenderingHint", "handle", $__GEng_hBuffer, "int", 4) ; Thanks UEZ! (1.2.2)
 	; ---
 	$__GEng_hDC = _WinAPI_GetDC($__GEng_hGui)
@@ -89,7 +89,7 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_Shutdown
-; Description ...: Stop GEngin, supprime la fenËtre d'affichage, et libËre toutes les ressources
+; Description ...: Stop GEngin, supprime la fen√®tre d'affichage, et lib√®re toutes les ressources
 ; Syntax.........: _GEng_Shutdown()
 ; Parameters ....:
 ; Return values .:
@@ -98,7 +98,7 @@ EndFunc
 ; ;==========================================================================================
 #cs
 Function: _GEng_Shutdown
-	Stops G-Engin, deletes the display window, and free all the ressources.
+	Stops G-Engin, deletes the display window, and free all the resources.
 
 Prototype:
 	> _GEng_Shutdown()
@@ -129,18 +129,18 @@ EndFunc
 
 ; #FUNCTION# ;===============================================================================
 ; Name...........: _GEng_SetDebug
-; Description ...: Active/DÈsactive/RÈcupËre le status actuel du mode debug
+; Description ...: Active/D√©sactive/R√©cup√®re le status actuel du mode debug
 ; Syntax.........: _GEng_SetDebug($mode = Default)
-; Parameters ....: $mode = 0 -> off, Defaut -> rÈcupËre la valeur du mode debug
-;                  	Ou: un/plusieurs de ces flags (additionnÈs)
-;                  - $GEng_Debug_Pens = CrÈer les couleurs nÈcessaires au dÈssins manuels avec les fonctions
-;                  	_GEng_Debug_xxx (paramËtre $iDbgPen)
+; Parameters ....: $mode = 0 -> off, Defaut -> r√©cup√®re la valeur du mode debug
+;                  	Ou: un/plusieurs de ces flags (additionn√©s)
+;                  - $GEng_Debug_Pens = Cr√©er les couleurs n√©cessaires au d√©ssins manuels avec les fonctions
+;                  	_GEng_Debug_xxx (param√®tre $iDbgPen)
 ;                  - $GEng_Debug_Sprites = Dessine les sprites
-;                  - $GEng_Debug_Vectors = Dessine les vecteurs vitesse et accÈlÈration
+;                  - $GEng_Debug_Vectors = Dessine les vecteurs vitesse et acc√©l√©ration
 ;                  - $GEng_Debug_Collisions = Dessine les collisions
 ; Return values .:
 ; Author ........: Matwachich
-; Remarks .......: Le mode dÈbug est surtout utile pour 'voir' les collisions
+; Remarks .......: Le mode d√©bug est surtout utile pour 'voir' les collisions
 ;                  	Quand une collision a lieu, les hit-boxes des sprites en collision s'affichent en rouge
 ;                  Les modes $GEng_Debug_Sprites et $GEng_Debug_Collisions activent automatiquement
 ;                  	$GEng_Debug_Pens
