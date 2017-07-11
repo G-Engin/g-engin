@@ -1,22 +1,30 @@
-﻿#include <GEngin.au3>
+﻿#include "GEngin.au3"
+#include <GUIConstantsEx.au3>
 
-Global $iW = 800, $iH = 600
+;~ To use _IsPressed
+#Include <Misc.au3>
 
-_GEng_Start("MyGame", $iW, $iH)
+;~ This is to get mouse position relatively to the window, not to the screen (by default)
+Opt("MouseCoordMode", 2)
+
+Global $scrW = 800, $scrH = 600
+_GEng_Start("MyGame", $scrW, $scrH)
+
 $Font = _GEng_Font_Create("Garamond", 20, 1, 0, 2)
-$Text = _GEng_Text_Create($Font, "", 0xFF004080, $iW - 100, 0, 100, 20)
-; ---
+$Text = _GEng_Text_Create($Font, "", $GEng_Color_Navy, $scrW - 100, 0, 100, 20)
 
 Do
-	_GEng_ScrFlush(0xFFFFFFFF)
-	; ---
+	_GEng_ScrFlush($GEng_Color_White)
+	;~ ---	
 
-	; ---
+	;~ ---
 	$FPS = _GEng_FPS_Get()
-	If $FPS <> -1 Then _GEng_Text_StringSet($Text, Round($FPS) & " FPS")
+	If $FPS <> -1 Then
+		_GEng_Text_StringSet($Text, Round($FPS) & " FPS")
+	EndIf
 	_GEng_Text_Draw($Text)
 	_GEng_ScrUpdate()
-Until GUIGetMsg() = -3
+Until GuiGetMsg() = $GUI_EVENT_CLOSE
 
 _GEng_Text_Delete($Text)
 _GEng_Font_Delete($Font)
