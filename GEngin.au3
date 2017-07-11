@@ -76,5 +76,6 @@ Global $_Arrow, _
 #include "GEngin\GEng_Geometry.au3"
 #include "GEngin\GEng_Text.au3"
 #include "GEngin\GEng_Sound.au3"
+#include "GEngin\GEng_Color_Constants.au3"
 ; ---
 #include "GEngin\GEng_Debug.au3"
