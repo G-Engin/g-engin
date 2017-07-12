@@ -3,6 +3,9 @@
 | **+:** Ajout | **-:** Délétion | **!:** Correction | **\*:** Modification|
 |              |                 |                   |                     |
 
+# v 1.2.3 (~/~/~)
+* +: GEng_Color_Constants.au3
+
 # v 1.2.2 (10/02/2012)
 * +: Ajout de l'anti-aliasing pour les text (merci UEZ!)
 * +: Paramètre $iAlign pour _GEng_Font_Create (Merci )
