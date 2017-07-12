@@ -1,0 +1,9 @@
+•	Colisão elástica: ambos os corpos se deformam e se expandem após o choque, resultando na mesma energia cinética;
+•	Colisão parcialmente elástica: os corpos perdem parte da energia cinética, que é transferida para trabalho (barulho, calor, deformação permantente - plástica);
+•	Colisão inelástica: toda a energia cinética é transferida para trabalho;
+Para iniciar nosso estudo de colisões em games, é melhor limitar o escopo. Vamos estudar a colisão de uma partícula (uma bola) com o solo. Neste caso, como a massa do solo (planeta) é muito maior que a massa da bola, podemos nos concentrar apenas na partícula.
+
+
+Collision with elasticity
+Collision with partial elasticity
+Collision without elasticity

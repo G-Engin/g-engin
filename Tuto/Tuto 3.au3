@@ -4,7 +4,7 @@
  Author:         Matwachich
 
  Script Function:
-	Tutoriel montrant l'utilité de la fonction _GEng_Sprite_PointGet
+	Tutoriel montrant l'utilitï¿½ de la fonction _GEng_Sprite_PointGet
 
 #ce ----------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ _GEng_Start("", $scrW, $scrH)
 ; Une image
 $hImg = _GEng_ImageLoad("res\gengin.png", 128, 128)
 
-; Un Sprite, au milieux de l'écran
+; Un Sprite, au milieux de l'ï¿½cran
 $hSpr = _GEng_Sprite_Create($hImg)
 	_GEng_Sprite_OriginSetEx($hSpr, $GEng_Origin_Mid)
 	_GEng_Sprite_SizeSet($hSpr, 128, 128)
@@ -32,16 +32,16 @@ $hSpr2 = _GEng_Sprite_Create($hImg)
 	_GEng_Sprite_SizeSet($hSpr2, 32, 32)
 	_GEng_Sprite_OriginSetEx($hSpr2, $GEng_Origin_Mid)
 
-; Maintenant: l'interret de la fonction _GEng_Sprite_PointGet et de convertir une coordonné
-; relative à un sprite, en coordonné relative à l'écran entier
-; utile par exemple pour garder une tourelle toujours au même endroit du sprite, quelle que soit
+; Maintenant: l'interret de la fonction _GEng_Sprite_PointGet et de convertir une coordonnï¿½
+; relative ï¿½ un sprite, en coordonnï¿½ relative ï¿½ l'ï¿½cran entier
+; utile par exemple pour garder une tourelle toujours au mï¿½me endroit du sprite, quelle que soit
 ; l'angle de ce sprite
 
 ; dans cet example nous allons positionner le petit sprite $hSpr2 sur le point 16, 16 du grand sprite
-; (dans le cadran supérieur gauche) et faire tourner ce dernier
-; vous verez que le petit sprite reste "collé" au grand!
+; (dans le cadran supï¿½rieur gauche) et faire tourner ce dernier
+; vous verez que le petit sprite reste "collï¿½" au grand!
 
-Global $x, $y ; vont stocker la position à donner au petit sprite
+Global $x, $y ; vont stocker la position ï¿½ donner au petit sprite
 
 Do
 	_GEng_ScrFlush(0xFFFFFFFF)

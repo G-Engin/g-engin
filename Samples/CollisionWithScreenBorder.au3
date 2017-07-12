@@ -10,7 +10,7 @@
 #EndRegion 
 
 Global $scrW = 300, $scrH = 300
-_GEng_Start("Border Collision", $scrW, $scrH)
+_GEng_Start("Collision With Screen Border", $scrW, $scrH)
 
 $oImageBall = _GEng_ImageLoad("./res/images/border_collision/ball.png")
 $oSpriteBall = _GEng_Sprite_Create($oImageBall)
