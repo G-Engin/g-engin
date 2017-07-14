@@ -25,7 +25,7 @@ EndFunc
 
 ; ##############################################################
 
-$img2 = _GEng_ImageLoad("res\viseur.png")
+$img2 = _GEng_ImageLoad("res\images\exemple-collisions\viseur.png")
 
 Global $nbr = 5
 Global $spr[$nbr], $tmp
