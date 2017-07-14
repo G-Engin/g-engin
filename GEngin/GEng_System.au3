@@ -125,6 +125,7 @@ Func _GEng_Shutdown()
 	; ---
 	_GDIPlus_Shutdown()
 	GuiDelete($__GEng_hGui)
+	Exit
 EndFunc
 
 ; #FUNCTION# ;===============================================================================
