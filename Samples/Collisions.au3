@@ -28,7 +28,7 @@ $oText = _GEng_Text_Create($oFont, "* Left mouse button => Move", $GEng_Color_Bl
 
 ; ##############################################################
 
-$img2 = _GEng_ImageLoad("res\images\exemple-collisions\viseur.png")
+$img2 = _GEng_ImageLoad("res\images\collisions\viseur.png")
 
 Global $nbr = 5
 Global $spr[$nbr], $tmp

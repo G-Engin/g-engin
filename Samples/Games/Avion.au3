@@ -1,4 +1,4 @@
-#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+﻿#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Compression=4
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #cs ----------------------------------------------------------------------------
@@ -11,30 +11,30 @@
 
 #ce ----------------------------------------------------------------------------
 
-#include "..\GEngin.au3"
+#include "..\..\GEngin.au3"
 #include <Misc.au3>
 
 Opt("MouseCoordMode", 2)
 
 $dll = DllOpen("user32.dll")
 
-Global $scrW = 800, $scrH = 600 ; taille de l'�cran
+Global $scrW = 800, $scrH = 600 ; taille de l'ï¿½cran
 Global $avionInnertie = 150, $avionRotInnertie = 300 ; variables physiques du joueur
 Global $avionMaxSpeed = 300, $avionMaxRotSpeed = 180 ; variables physiques du joueur
 Global $tirParSec = 12, $tirSpeed = 800, $coneDeTire = 2 ; variables physiques des balles
 Global $MissParSec = 2, $MissAccel = 1200 ; variables physiques des missiles
-Global $asterMax = 5 ; nombre max d'ast�roides
-Global $asterSpeeds[3] = [50, 100, 150] ; vitesse des ast�roides (grand, moy, petit)
+Global $asterMax = 5 ; nombre max d'astï¿½roides
+Global $asterSpeeds[3] = [50, 100, 150] ; vitesse des astï¿½roides (grand, moy, petit)
 Global $asterSpeedVar = 50 ; +/- 50
-Global $asterLife[3] = [80, 40, 10] ; points de vie des ast�roides (grand, moy, petit)
-Global $dmgMissile = 75, $dmgBalle = 10 ; d�gats des armes
+Global $asterLife[3] = [80, 40, 10] ; points de vie des astï¿½roides (grand, moy, petit)
+Global $dmgMissile = 75, $dmgBalle = 10 ; dï¿½gats des armes
 ; ---
 Global $score = 0
-Global $asterScore[3] = [500, 250, 100] ; Score par ast�roide d�truit (grand, moy, petit)
+Global $asterScore[3] = [500, 250, 100] ; Score par astï¿½roide dï¿½truit (grand, moy, petit)
 Global $playerLife = 100 ; points de vie du joueur
-Global $asterDmg[3] = [50, 20, 10] ; D�gats des ast�roides sur le joueur (grand, moy, petit)
-Global $overTime = 2000 ; d�lai entre: Point de vie = 0 ET explosion du vaisseau
-Global $overExploTime = 100 ; d�lai entre les petites explosion dans $overTime
+Global $asterDmg[3] = [50, 20, 10] ; Dï¿½gats des astï¿½roides sur le joueur (grand, moy, petit)
+Global $overTime = 2000 ; dï¿½lai entre: Point de vie = 0 ET explosion du vaisseau
+Global $overExploTime = 100 ; dï¿½lai entre les petites explosion dans $overTime
 
 ; variables internes
 Global Const $asterCollCircleRay[3] = [30, 16, 8]
@@ -58,7 +58,7 @@ Func _toggleDebug()
 	EndIf
 EndFunc
 
-_GEng_Start("G-Ast�ro�des", $scrW, $scrH)
+_GEng_Start("G-Astéroïdes", $scrW, $scrH)
 _GEng_Sound_Init()
 ; ---
 
@@ -164,7 +164,7 @@ $font2 = _GEng_Font_Create("Calibri", 120, 2) ; texte grand (Game Over)
 $txt = _GEng_Text_Create($font1, "FPS", 0xFFFFFFFF, $ScrW - 100, 0)
 $txtLife = _GEng_Text_Create($font1, $playerLife & " %", 0xFF00FF00, 0, $ScrH - 26)
 $txtScore = _GEng_Text_Create($font1, $score, 0xFFFFFFFF, 0, 0)
-$txtAsterMax = _GEng_Text_Create($font1, $asterMax & " Ast�ro�des", 0xFFFFFFFF, 0, 26)
+$txtAsterMax = _GEng_Text_Create($font1, $asterMax & " Astï¿½roï¿½des", 0xFFFFFFFF, 0, 26)
 
 _GEng_Text_SizeMeasure($font2, "GAME OVER", $x, $y)
 $txtGameOver = _GEng_Text_Create($font2, "GAME OVER", 0xFFFFFFFF, ($ScrW / 2) - ($x / 2), ($ScrH / 2) - ($y / 2))
@@ -217,7 +217,7 @@ Do
 	; ---
 	
 	If Not $gameOver Then
-		Select ; Mouvement Avant/Ari�re
+		Select ; Mouvement Avant/Ariï¿½re
 			Case _IsPressed('5A', $dll) ; Z
 				$tmp = _GEng_AngleToVector(_GEng_Sprite_AngleGet($spr_Avion), 1200)
 				_GEng_Sprite_AccelSet($spr_Avion, $tmp[0], $tmp[1])
@@ -279,7 +279,7 @@ Do
 	If $y < 0 Then $y = $ScrH
 	_GEng_Sprite_PosSet($spr_Avion, $x, $y)
 	
-	; simule un mouvement al�atoire/instable
+	; simule un mouvement alï¿½atoire/instable
 	;$a = Random(0, 359, 1)
 	;$a = _GEng_AngleToVector($a, 1)
 	;_GEng_Sprite_SpeedGet($spr_Avion, $tmp, $tmp2)
@@ -293,14 +293,14 @@ Do
 	
 	If $tmp2 <> -1 Then
 		_GEng_Text_StringSet($txt, Round($tmp2) & " FPS")
-		WinSetTitle($__GEng_hGui, "", "G-Ast�ro�des (Nbr Sprites: " & $tmp & ")")
+		WinSetTitle($__GEng_hGui, "", "G-Astï¿½roï¿½des (Nbr Sprites: " & $tmp & ")")
 	EndIf
 	
 	_AdjustDifficulty()
 	_LifeSwitchFont()
 	_GEng_Text_StringSet($txtLife, $playerLife & " %")
 	_GEng_Text_StringSet($txtScore, $score)
-	_GEng_Text_StringSet($txtAsterMax, $asterMax & " Ast�ro�des")
+	_GEng_Text_StringSet($txtAsterMax, $asterMax & " Astï¿½roï¿½des")
 	
 Until GuiGetMsg() = -3
 
