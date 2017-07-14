@@ -6,7 +6,7 @@
  Local Const $SPACEBAR = 20
 #EndRegion 
 
-Global $scrW = 800, $scrH = 600, $iExplosionFrameCount = 10
+Global $scrW = 800, $scrH = 600, $iExplosionFrameCount = 10, $oAnimationExplosion
 
 _GEng_Start("Sound And Animation", $scrW, $scrH)
 _GEng_Sound_Init()
@@ -16,16 +16,11 @@ $oSoundExplosion = _GEng_Sound_Load("./res/sounds/explosion.wav")
 
 _AnimationLoad()
 
-$sprite1 = _GEng_Sprite_Create()
-_GEng_Sprite_ImageSet($sprite1, $oImageExplosion)
-_GEng_Sprite_OriginSet($sprite1, 90, 200)
-_GEng_Sprite_SizeSet($sprite1, 128, 128)
-_GEng_Sprite_SpeedSet($sprite1, 0, 0, 100)
-_GEng_Sprite_AngleSpeedSet($sprite1, 0, 30)
-_GEng_Sprite_InnertieSet($sprite1, 20)
-_GEng_Sprite_AngleInnertieSet($sprite1, 60)
-_GEng_Sprite_MasseSet($sprite1, 1)
-_GEng_Sprite_PosSet($sprite1, $scrW - 200, $scrH / 2)
+$oSpriteExplosion = _GEng_Sprite_Create()
+_GEng_Sprite_ImageSet($oSpriteExplosion, $oImageExplosion)
+_GEng_Sprite_OriginSetEx($oSpriteExplosion, $GEng_Origin_Mid)
+_GEng_Sprite_SizeSet($oSpriteExplosion, 128, 128)
+_GEng_Sprite_PosSet($oSpriteExplosion, $scrW / 2, $scrH - 100)
 
 $oFont = _GEng_Font_Create("Comic Sans MS", 18)
 $oText = _GEng_Text_Create($oFont, "* Spacebar => Start Explosion", $GEng_Color_Navy, 0, 0, $scrW, $scrH)
@@ -38,7 +33,8 @@ Do
 		_GEng_Sound_Play($oSoundExplosion)
 	EndIf
 	
-	_GEng_Sprite_Draw($sprite1)
+	_GEng_Sprite_Draw($oSpriteExplosion)
+	_GEng_Sprite_Animate($oSpriteExplosion, $oAnimationExplosion)
 	_GEng_Text_Draw($oText)
 
 	;~ ---
@@ -48,7 +44,11 @@ Until GuiGetMsg() = $GUI_EVENT_CLOSE
 _GEng_Shutdown()
 
 
-Func _Animation($Param)
+Func _AnimationLoad()
 	
-	Return True
+	$oAnimationExplosion = _GEng_Anim_Create()
+	For $i = 0 To $iExplosionFrameCount
+		_GEng_Anim_FrameAdd($oAnimationExplosion, $oImageExplosion, 100, 100 * $i, 0, 20, 120)
+	Next
+	
 EndFunc
