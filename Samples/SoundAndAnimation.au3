@@ -17,10 +17,10 @@ $oSoundExplosion = _GEng_Sound_Load("./res/sounds/explosion.wav")
 _AnimationLoad()
 
 $oSpriteExplosion = _GEng_Sprite_Create()
-_GEng_Sprite_ImageSet($oSpriteExplosion, $oImageExplosion)
-_GEng_Sprite_OriginSetEx($oSpriteExplosion, $GEng_Origin_Mid)
-_GEng_Sprite_SizeSet($oSpriteExplosion, 128, 128)
-_GEng_Sprite_PosSet($oSpriteExplosion, $scrW / 2, $scrH - 100)
+;~ _GEng_Sprite_ImageSet($oSpriteExplosion, $oImageExplosion)
+;~ _GEng_Sprite_SizeSet($oSpriteExplosion, 46.6, 120)
+;~ _GEng_Sprite_OriginSetEx($oSpriteExplosion, $GEng_Origin_Mid)
+_GEng_Sprite_PosSet($oSpriteExplosion, $scrW / 2, $scrH - 200)
 
 $oFont = _GEng_Font_Create("Comic Sans MS", 18)
 $oText = _GEng_Text_Create($oFont, "* Spacebar => Start Explosion", $GEng_Color_Navy, 0, 0, $scrW, $scrH)
@@ -48,7 +48,7 @@ Func _AnimationLoad()
 	
 	$oAnimationExplosion = _GEng_Anim_Create()
 	For $i = 0 To $iExplosionFrameCount
-		_GEng_Anim_FrameAdd($oAnimationExplosion, $oImageExplosion, 100, 100 * $i, 0, 20, 120)
+		_GEng_Anim_FrameAdd($oAnimationExplosion, $oImageExplosion, 500, 150 * $i, 0, 40, 200)
 	Next
 	
 EndFunc
