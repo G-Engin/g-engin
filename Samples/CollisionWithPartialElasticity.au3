@@ -8,7 +8,7 @@
 
 Global $scrW = 800, $scrH = 300
 
-_GEng_Start("Collision With Elasticity", $scrW, $scrH)
+_GEng_Start("Collision With Partial Elasticity", $scrW, $scrH)
 
 $oImageBall = _GEng_ImageLoad("./res/images/collisions/ball.png")
 $oImageBall2 = _GEng_ImageLoad("./res/images/collisions/ball2.png")
@@ -26,7 +26,7 @@ Do
     _GEng_ScrFlush($GEng_Color_White)
     ;~ ---	
 
-    $IsColliding = _GEng_Sprite_Collision($oSpriteBall, $oSpriteBall2, 0, 10)
+    $IsColliding = _GEng_Sprite_Collision($oSpriteBall, $oSpriteBall2, 0, 10, 0)
 
     If ($IsColliding) Then
         _GEng_Sprite_AccelSet($oSpriteBall, 0, 0)
@@ -34,6 +34,8 @@ Do
     EndIf 
 
     If (_IsPressed($SPACEBAR)) Then  
+        _GEng_Sprite_PosSet($oSpriteBall, 63, $scrH / 2)
+        _GEng_Sprite_PosSet($oSpriteBall2, $scrW - 63, $scrH / 2)
         _GEng_Sprite_AccelSet($oSpriteBall, 500, 0)
         _GEng_Sprite_AccelSet($oSpriteBall2, -500, 0)
     EndIf
@@ -54,7 +56,7 @@ Func _SetupSpriteBall(ByRef $oSprBall, $PosX)
     _GEng_Sprite_OriginSetEx($oSprBall, $GEng_Origin_Mid)
 
     ;~ Inertia for elastic effect
-    _GEng_Sprite_InnertieSet($oSprBall, 505)
+    _GEng_Sprite_InnertieSet($oSprBall, 2000)
 
     #Region Sets to handle object collision 
     _GEng_Sprite_MasseSet($oSprBall, 1)

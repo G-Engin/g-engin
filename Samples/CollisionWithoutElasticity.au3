@@ -8,7 +8,7 @@
 
 Global $scrW = 800, $scrH = 300
 
-_GEng_Start("Collision With Elasticity", $scrW, $scrH)
+_GEng_Start("Collision Without Elasticity", $scrW, $scrH)
 
 $oImageBall = _GEng_ImageLoad("./res/images/collisions/ball.png")
 $oImageBall2 = _GEng_ImageLoad("./res/images/collisions/ball2.png")
@@ -54,7 +54,7 @@ Func _SetupSpriteBall(ByRef $oSprBall, $PosX)
     _GEng_Sprite_OriginSetEx($oSprBall, $GEng_Origin_Mid)
 
     ;~ Inertia for elastic effect
-    _GEng_Sprite_InnertieSet($oSprBall, 505)
+    _GEng_Sprite_InnertieSet($oSprBall, 1000000)
 
     #Region Sets to handle object collision 
     _GEng_Sprite_MasseSet($oSprBall, 1)

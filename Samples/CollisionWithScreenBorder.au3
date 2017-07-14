@@ -12,7 +12,7 @@
 Global $scrW = 300, $scrH = 300
 _GEng_Start("Collision With Screen Border", $scrW, $scrH)
 
-$oImageBall = _GEng_ImageLoad("./res/images/collision-with-screen-border/ball.png")
+$oImageBall = _GEng_ImageLoad("./res/images/collisions/ball.png")
 $oSpriteBall = _GEng_Sprite_Create($oImageBall)
 _GEng_Sprite_PosSet($oSpriteBall, $scrW / 2, $scrH / 2)
 _GEng_Sprite_OriginSetEx($oSpriteBall, $GEng_Origin_Mid)
