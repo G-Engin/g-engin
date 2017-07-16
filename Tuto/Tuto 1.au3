@@ -25,7 +25,8 @@ _GEng_Start("GEngin - Tuto 1", 400, 300)
 ; On charge les image que nous allons afficher dans des variables
 ; Conseil: Il est prï¿½fï¿½rable de modifiï¿½ la taille de l'image lors de son chargement
 ;  plutï¿½t que avec les paramï¿½tres du sprite (_GEng_Sprite_SizeSet) (performances)
-$img_Gimp = _GEng_ImageLoad("res\gengin.png", 256, 256)
+;~ $img_Gimp = _GEng_ImageLoad("res\gengin.png", 256, 256)
+$img_Gimp = _GEng_ImageLoad("res\gengin.png")
 
 ; On crï¿½er nos objet sprites, pour l'instant un seul et on le stock dans une variable
 $spr_Gimp = _GEng_Sprite_Create()

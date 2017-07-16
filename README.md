@@ -11,6 +11,7 @@
 * [Collision With Screen Border](Samples/CollisionWithScreenBorder.au3)
 * [Dynamic Moving](Samples/DynamicMoving.au3)
 * [Particules (Load Image of Stream)](Samples/Particules.au3)
+* [Sound And Animation](Samples/SoundAndAnimation.au3)
 
 ## [Sample Games](Samples/Games)
 * [G-Astéroïdes](Samples/Games/Avion.au3)
