@@ -4,6 +4,9 @@ _GEng_Anim_FrameCount ( ByRef hAnim ) Retourne le nombre de frames contenues dan
 _GEng_Anim_FrameAdd ( ByRef hAnim , ByRef hImage , iFramDuration [, x [, y [, w [, h]]]] ) Ajoute une frame dans l'objet animation (required: #include <GEngin.au3>)
 _GEng_Anim_FrameMod ( ByRef hAnim , iFrameNumber , ByRef hImage [, iFramDuration [, x [, y [, w [, h]]]]] ) Modifier une frame d'un Objet Animation (required: #include <GEngin.au3>)
 
+# === GEng_Color_Constants_calltips.txt ===
+_GEng_Color_ShowList() Afficher la liste des couleurs et le nom de la variable
+
 # === GEng_Draw_calltips.txt ===
 _GEng_ScrFlush ( [ iBkColor ] ) Permet d'éffacer l'écran, en lui donnant une couleur (required: #include <GEngin.au3>)
 _GEng_ScrUpdate (  ) Valider les opération de déssin (copie le hBitmap dans le hGraphic) (required: #include <GEngin.au3>)
@@ -123,4 +126,3 @@ _GEng_Text_PosGet ( ByRef hTxtRect , ByRef iPosX , ByRef iPosY , ByRef iWidth , 
 _GEng_Text_SizeMeasure ( ByRef hFont , sText , ByRef w , ByRef h ) Donne la taille (Largeur, Hauteur) d'un rectangle nécéssaire à l'affichage d'un texte (required: #include <GEngin.au3>)
 _GEng_Text_ColorSet ( ByRef hTxtRect , iColor ) Modifie la couleur du texte d'un Objet Text (required: #include <GEngin.au3>)
 _GEng_Text_Draw ( ByRef hTxtRect ) Affiche un objet Text (required: #include <GEngin.au3>)
-

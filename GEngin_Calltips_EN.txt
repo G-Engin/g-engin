@@ -4,6 +4,9 @@ _GEng_Anim_FrameCount ( ByRef hAnim ) Get the number of frames in an Animation O
 _GEng_Anim_FrameAdd ( ByRef hAnim , ByRef hImage , iFramDuration [, x [, y [, w [, h]]]] ) Add a frame to an Animation Object (required: #include <GEngin.au3>)
 _GEng_Anim_FrameMod ( ByRef hAnim , iFrameNumber , ByRef hImage [, iFramDuration [, x [, y [, w [, h]]]]] ) Modify an Animation Object's frame (required: #include <GEngin.au3>)
 
+# === GEng_Color_Constants_calltips.txt ===
+_GEng_Color_ShowList() Show list of colors and name of variable
+
 # === GEng_Draw_calltips.txt ===
 _GEng_ScrFlush ( [ iBkColor ] ) Flush the screen with a bakcground color (required: #include <GEngin.au3>)
 _GEng_ScrUpdate (  ) Validate all the drawings (Sprites, Text) and update the screen (required: #include <GEngin.au3>)
@@ -123,4 +126,3 @@ _GEng_Text_PosGet ( ByRef hTxtRect , ByRef iPosX , ByRef iPosY , ByRef iWidth , 
 _GEng_Text_SizeMeasure ( ByRef hFont , sText , ByRef w , ByRef h ) Returns the dimension needed to display $sText with $hFont (required: #include <GEngin.au3>)
 _GEng_Text_ColorSet ( ByRef hTxtRect , iColor ) Change the color of a Text Object (required: #include <GEngin.au3>)
 _GEng_Text_Draw ( ByRef hTxtRect ) Draw a Text Object (required: #include <GEngin.au3>)
-

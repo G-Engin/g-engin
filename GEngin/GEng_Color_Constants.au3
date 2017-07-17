@@ -10,6 +10,14 @@
 
 ;~ Color format (0xAARRGGBB)
 
+#Region ### Functions ###
+#cs
+- Main Functions
+	_GEng_Color_ShowList()
+	__GEng_Color_InvertColor($hexColor)
+#ce
+#EndRegion ###
+
 Global Const $GEng_Color_Black 							= 0xFF000000
 Global Const $GEng_Color_Navy 							= 0xFF000080
 Global Const $GEng_Color_DarkBlue 						= 0xFF00008B
@@ -150,3 +158,177 @@ Global Const $GEng_Color_Yellow                         = 0xFFFFFF00
 Global Const $GEng_Color_LightYellow                    = 0xFFFFFFE0
 Global Const $GEng_Color_Ivory                          = 0xFFFFFFF0
 Global Const $GEng_Color_White                          = 0xFFFFFFFF
+
+Func _GEng_Color_ShowList()
+    Local $aColors = [["$GEng_Color_Black", $GEng_Color_Black], _
+                    ["$GEng_Color_Navy", $GEng_Color_Navy], _
+                    ["$GEng_Color_DarkBlue", $GEng_Color_DarkBlue], _
+                    ["$GEng_Color_MediumBlue", $GEng_Color_MediumBlue], _
+                    ["$GEng_Color_Blue", $GEng_Color_Blue], _
+                    ["$GEng_Color_DarkGreen", $GEng_Color_DarkGreen], _
+                    ["$GEng_Color_Green", $GEng_Color_Green], _
+                    ["$GEng_Color_Teal", $GEng_Color_Teal], _
+                    ["$GEng_Color_DarkCyan", $GEng_Color_DarkCyan], _
+                    ["$GEng_Color_DeepSkyBlue", $GEng_Color_DeepSkyBlue], _
+                    ["$GEng_Color_DarkTurquoise", $GEng_Color_DarkTurquoise], _
+                    ["$GEng_Color_MediumSpringGreen", $GEng_Color_MediumSpringGreen], _
+                    ["$GEng_Color_Lime", $GEng_Color_Lime], _
+                    ["$GEng_Color_SpringGreen", $GEng_Color_SpringGreen], _
+                    ["$GEng_Color_Aqua", $GEng_Color_Aqua], _
+                    ["$GEng_Color_Cyan", $GEng_Color_Cyan], _
+                    ["$GEng_Color_MidnightBlue", $GEng_Color_MidnightBlue], _
+                    ["$GEng_Color_DodgerBlue", $GEng_Color_DodgerBlue], _
+                    ["$GEng_Color_LightSeaGreen", $GEng_Color_LightSeaGreen], _
+                    ["$GEng_Color_ForestGreen", $GEng_Color_ForestGreen], _
+                    ["$GEng_Color_SeaGreen", $GEng_Color_SeaGreen], _
+                    ["$GEng_Color_DarkSlateGray", $GEng_Color_DarkSlateGray], _
+                    ["$GEng_Color_LimeGreen", $GEng_Color_LimeGreen], _
+                    ["$GEng_Color_MediumSeaGreen", $GEng_Color_MediumSeaGreen], _
+                    ["$GEng_Color_Turquoise", $GEng_Color_Turquoise], _
+                    ["$GEng_Color_RoyalBlue", $GEng_Color_RoyalBlue], _
+                    ["$GEng_Color_SteelBlue", $GEng_Color_SteelBlue], _
+                    ["$GEng_Color_DarkSlateBlue", $GEng_Color_DarkSlateBlue], _
+                    ["$GEng_Color_MediumTurquoise", $GEng_Color_MediumTurquoise], _
+                    ["$GEng_Color_Indigo", $GEng_Color_Indigo], _
+                    ["$GEng_Color_DarkOliveGreen", $GEng_Color_DarkOliveGreen], _
+                    ["$GEng_Color_CadetBlue", $GEng_Color_CadetBlue], _
+                    ["$GEng_Color_CornflowerBlue", $GEng_Color_CornflowerBlue], _
+                    ["$GEng_Color_MediumAquaMarine", $GEng_Color_MediumAquaMarine], _
+                    ["$GEng_Color_DimGray", $GEng_Color_DimGray], _
+                    ["$GEng_Color_SlateBlue", $GEng_Color_SlateBlue], _
+                    ["$GEng_Color_OliveDrab", $GEng_Color_OliveDrab], _
+                    ["$GEng_Color_SlateGray", $GEng_Color_SlateGray], _
+                    ["$GEng_Color_LightSlateGray", $GEng_Color_LightSlateGray], _
+                    ["$GEng_Color_MediumSlateBlue", $GEng_Color_MediumSlateBlue], _
+                    ["$GEng_Color_LawnGreen", $GEng_Color_LawnGreen], _
+                    ["$GEng_Color_Chartreuse", $GEng_Color_Chartreuse], _
+                    ["$GEng_Color_Aquamarine", $GEng_Color_Aquamarine], _
+                    ["$GEng_Color_Maroon", $GEng_Color_Maroon], _
+                    ["$GEng_Color_Purple", $GEng_Color_Purple], _
+                    ["$GEng_Color_Olive", $GEng_Color_Olive], _
+                    ["$GEng_Color_Gray", $GEng_Color_Gray], _
+                    ["$GEng_Color_SkyBlue", $GEng_Color_SkyBlue], _
+                    ["$GEng_Color_LightSkyBlue", $GEng_Color_LightSkyBlue], _
+                    ["$GEng_Color_BlueViolet", $GEng_Color_BlueViolet], _
+                    ["$GEng_Color_DarkRed", $GEng_Color_DarkRed], _
+                    ["$GEng_Color_DarkMagenta", $GEng_Color_DarkMagenta], _
+                    ["$GEng_Color_SaddleBrown", $GEng_Color_SaddleBrown], _
+                    ["$GEng_Color_DarkSeaGreen", $GEng_Color_DarkSeaGreen], _
+                    ["$GEng_Color_LightGreen", $GEng_Color_LightGreen], _
+                    ["$GEng_Color_MediumPurple", $GEng_Color_MediumPurple], _
+                    ["$GEng_Color_DarkViolet", $GEng_Color_DarkViolet], _
+                    ["$GEng_Color_PaleGreen", $GEng_Color_PaleGreen], _
+                    ["$GEng_Color_DarkOrchid", $GEng_Color_DarkOrchid], _
+                    ["$GEng_Color_YellowGreen", $GEng_Color_YellowGreen], _
+                    ["$GEng_Color_Sienna", $GEng_Color_Sienna], _
+                    ["$GEng_Color_Brown", $GEng_Color_Brown], _
+                    ["$GEng_Color_DarkGray", $GEng_Color_DarkGray], _
+                    ["$GEng_Color_LightBlue", $GEng_Color_LightBlue], _
+                    ["$GEng_Color_GreenYellow", $GEng_Color_GreenYellow], _
+                    ["$GEng_Color_PaleTurquoise", $GEng_Color_PaleTurquoise], _
+                    ["$GEng_Color_LightSteelBlue", $GEng_Color_LightSteelBlue], _
+                    ["$GEng_Color_PowderBlue", $GEng_Color_PowderBlue], _
+                    ["$GEng_Color_FireBrick", $GEng_Color_FireBrick], _
+                    ["$GEng_Color_DarkGoldenRod", $GEng_Color_DarkGoldenRod], _
+                    ["$GEng_Color_MediumOrchid", $GEng_Color_MediumOrchid], _
+                    ["$GEng_Color_RosyBrown", $GEng_Color_RosyBrown], _
+                    ["$GEng_Color_DarkKhaki", $GEng_Color_DarkKhaki], _
+                    ["$GEng_Color_Silver", $GEng_Color_Silver], _
+                    ["$GEng_Color_MediumVioletRed", $GEng_Color_MediumVioletRed], _
+                    ["$GEng_Color_IndianRed", $GEng_Color_IndianRed], _
+                    ["$GEng_Color_Peru", $GEng_Color_Peru], _
+                    ["$GEng_Color_Chocolate", $GEng_Color_Chocolate], _
+                    ["$GEng_Color_Tan", $GEng_Color_Tan], _
+                    ["$GEng_Color_LightGrey", $GEng_Color_LightGrey], _
+                    ["$GEng_Color_PaleVioletRed", $GEng_Color_PaleVioletRed], _
+                    ["$GEng_Color_Thistle", $GEng_Color_Thistle], _
+                    ["$GEng_Color_Orchid", $GEng_Color_Orchid], _
+                    ["$GEng_Color_GoldenRod", $GEng_Color_GoldenRod], _
+                    ["$GEng_Color_Crimson", $GEng_Color_Crimson], _
+                    ["$GEng_Color_Gainsboro", $GEng_Color_Gainsboro], _
+                    ["$GEng_Color_Plum", $GEng_Color_Plum], _
+                    ["$GEng_Color_BurlyWood", $GEng_Color_BurlyWood], _
+                    ["$GEng_Color_LightCyan", $GEng_Color_LightCyan], _
+                    ["$GEng_Color_Lavender", $GEng_Color_Lavender], _
+                    ["$GEng_Color_DarkSalmon", $GEng_Color_DarkSalmon], _
+                    ["$GEng_Color_Violet", $GEng_Color_Violet], _
+                    ["$GEng_Color_PaleGoldenRod", $GEng_Color_PaleGoldenRod], _
+                    ["$GEng_Color_LightCoral", $GEng_Color_LightCoral], _
+                    ["$GEng_Color_Khaki", $GEng_Color_Khaki], _
+                    ["$GEng_Color_AliceBlue", $GEng_Color_AliceBlue], _
+                    ["$GEng_Color_HoneyDew", $GEng_Color_HoneyDew], _
+                    ["$GEng_Color_Azure", $GEng_Color_Azure], _
+                    ["$GEng_Color_SandyBrown", $GEng_Color_SandyBrown], _
+                    ["$GEng_Color_Wheat", $GEng_Color_Wheat], _
+                    ["$GEng_Color_Beige", $GEng_Color_Beige], _
+                    ["$GEng_Color_WhiteSmoke", $GEng_Color_WhiteSmoke], _
+                    ["$GEng_Color_MintCream", $GEng_Color_MintCream], _
+                    ["$GEng_Color_GhostWhite", $GEng_Color_GhostWhite], _
+                    ["$GEng_Color_Salmon", $GEng_Color_Salmon], _
+                    ["$GEng_Color_AntiqueWhite", $GEng_Color_AntiqueWhite], _
+                    ["$GEng_Color_Linen", $GEng_Color_Linen], _
+                    ["$GEng_Color_LightGoldenRodYellow", $GEng_Color_LightGoldenRodYellow], _
+                    ["$GEng_Color_OldLace", $GEng_Color_OldLace], _
+                    ["$GEng_Color_Red", $GEng_Color_Red], _
+                    ["$GEng_Color_Fuchsia", $GEng_Color_Fuchsia], _
+                    ["$GEng_Color_Magenta", $GEng_Color_Magenta], _
+                    ["$GEng_Color_DeepPink", $GEng_Color_DeepPink], _
+                    ["$GEng_Color_OrangeRed", $GEng_Color_OrangeRed], _
+                    ["$GEng_Color_Tomato", $GEng_Color_Tomato], _
+                    ["$GEng_Color_HotPink", $GEng_Color_HotPink], _
+                    ["$GEng_Color_Coral", $GEng_Color_Coral], _
+                    ["$GEng_Color_Darkorange", $GEng_Color_Darkorange], _
+                    ["$GEng_Color_LightSalmon", $GEng_Color_LightSalmon], _
+                    ["$GEng_Color_Orange", $GEng_Color_Orange], _
+                    ["$GEng_Color_LightPink", $GEng_Color_LightPink], _
+                    ["$GEng_Color_Pink", $GEng_Color_Pink], _
+                    ["$GEng_Color_Gold", $GEng_Color_Gold], _
+                    ["$GEng_Color_PeachPuff", $GEng_Color_PeachPuff], _
+                    ["$GEng_Color_NavajoWhite", $GEng_Color_NavajoWhite], _
+                    ["$GEng_Color_Moccasin", $GEng_Color_Moccasin], _
+                    ["$GEng_Color_Bisque", $GEng_Color_Bisque], _
+                    ["$GEng_Color_MistyRose", $GEng_Color_MistyRose], _
+                    ["$GEng_Color_BlanchedAlmond", $GEng_Color_BlanchedAlmond], _
+                    ["$GEng_Color_PapayaWhip", $GEng_Color_PapayaWhip], _
+                    ["$GEng_Color_LavenderBlush", $GEng_Color_LavenderBlush], _
+                    ["$GEng_Color_SeaShell", $GEng_Color_SeaShell], _
+                    ["$GEng_Color_Cornsilk", $GEng_Color_Cornsilk], _
+                    ["$GEng_Color_LemonChiffon", $GEng_Color_LemonChiffon], _
+                    ["$GEng_Color_FloralWhite", $GEng_Color_FloralWhite], _
+                    ["$GEng_Color_Snow", $GEng_Color_Snow], _
+                    ["$GEng_Color_Yellow", $GEng_Color_Yellow], _
+                    ["$GEng_Color_LightYellow", $GEng_Color_LightYellow], _
+                    ["$GEng_Color_Ivory", $GEng_Color_Ivory], _
+                    ["$GEng_Color_White", $GEng_Color_White]]
+
+    GUICreate("Colors", 450, 450)
+    $colors = GUICtrlCreateListView("Name of Variable|Color", 8, 8, 444, 450)
+    GUICtrlSendMsg($colors, 0x101E, 0, 340)
+
+    For $i = 0 to (UBound($aColors) - 1)
+        GUICtrlCreateListViewItem($aColors[$i][0] & "|0x" & Hex($aColors[$i][1], 8), $colors)
+        GUICtrlSetBkColor(-1, "0x" & Hex($aColors[$i][1], 6))
+        GUICtrlSetColor(-1, __GEng_Color_InvertColor("0x" & Hex($aColors[$i][1], 6)))
+    Next
+
+    GUISetState( @SW_SHOW )
+    While 1
+        Switch GUIGetMsg()
+            Case -3 ;~ $GUI_EVENT_CLOSE
+                ExitLoop
+        EndSwitch
+    WEnd
+EndFunc
+
+; ==============================================================
+; ### Internals
+; ==============================================================
+Func __GEng_Color_InvertColor($hexColor)
+    $color = ($hexColor > 0xFFFFFF / 2) ? 0x000000 : 0xFFFFFF
+    Return $color
+EndFunc
+
+; ==============================================================
+; ### Test
+; ==============================================================
+;~ _GEng_Color_ShowList()
