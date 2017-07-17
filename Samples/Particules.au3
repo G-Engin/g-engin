@@ -9,7 +9,6 @@
 #ce ----------------------------------------------------------------------------
 
 Opt("MouseCoordMode", 2)
-#include <Misc.au3>
 #include <..\GEngin.au3>
 
 Global $scrW = 640, $scrH = 480, $fps

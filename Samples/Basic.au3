@@ -1,11 +1,4 @@
 #include "../GEngin.au3"
-#include <GUIConstantsEx.au3>
-
-;~ To use _IsPressed
-#Include <Misc.au3>
-
-;~ To use _WinAPI_GetMousePosX and _WinAPI_GetMousePosY
-#include <WinAPI.au3>
 
 ;~ This is to get mouse position relatively to the window, not to the screen (by default)
 Opt("MouseCoordMode", 2)
@@ -42,8 +35,11 @@ Do
     _GEng_ScrFlush($GEng_Color_White)
     ;~ ---	
 
+    ;~ _IsPressed is from UDF Misc.au3
     If (_IsPressed($LEFT_MOUSE_BUTTON)) Then
         _GEng_Sprite_OriginGet($oSpriteLogo, $iOriginAxisX, $iOriginAxisY)
+
+        ;~ _WinAPI_GetMousePosX and _WinAPI_GetMousePosY is from UDF WinAPI.au3
         _GEng_Sprite_PosSet($oSpriteLogo, _WinAPI_GetMousePosX() - $iOriginAxisX, _WinAPI_GetMousePosY() - ($iOriginAxisY / 4))
     ElseIf (_IsPressed($RIGHT_MOUSE_BUTTON)) Then
         _GEng_Sprite_AngleAdd($oSpriteLogo, 5)

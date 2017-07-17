@@ -1,5 +1,3 @@
-#Include <Misc.au3>
-#include <GUIConstantsEx.au3>
 #include "..\GEngin.au3"
 
 #Region https://www.autoitscript.com/autoit3/docs/libfunctions/_IsPressed.htm

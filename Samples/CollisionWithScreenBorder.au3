@@ -1,6 +1,4 @@
 #include "../GEngin.au3"
-#include <GUIConstantsEx.au3>
-#Include <Misc.au3>
 
 #Region https://www.autoitscript.com/autoit3/docs/libfunctions/_IsPressed.htm
  Local Const $LEFT_ARROW = 25 

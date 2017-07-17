@@ -9,7 +9,6 @@
 #ce ----------------------------------------------------------------------------
 
 #include "..\GEngin.au3"
-#include <Misc.au3>
 
 Opt("MouseCoordMode", 2)
 Opt("GuiOnEventMode", 1)

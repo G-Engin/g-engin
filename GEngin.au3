@@ -37,6 +37,8 @@
 #include <GDIPlus.au3>
 #include <Array.au3>
 #include <WinApi.au3>
+#include <Misc.au3> ;~ To use _IsPressed
+#include <GUIConstantsEx.au3> ;~ To use $GUI_EVENT_CLOSE
 #include "GEngin\Bass\bass.au3"
 
 ; ##############################################################

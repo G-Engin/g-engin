@@ -1,8 +1,4 @@
 ﻿#include "GEngin.au3"
-#include <GUIConstantsEx.au3>
-
-;~ To use _IsPressed
-#Include <Misc.au3>
 
 ;~ This is to get mouse position relatively to the window, not to the screen (by default)
 Opt("MouseCoordMode", 2)

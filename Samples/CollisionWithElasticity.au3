@@ -1,6 +1,4 @@
 #include "../GEngin.au3"
-#include <GUIConstantsEx.au3>
-#Include <Misc.au3>
 
 #Region https://www.autoitscript.com/autoit3/docs/libfunctions/_IsPressed.htm
  Local Const $SPACEBAR = 20
@@ -32,7 +30,7 @@ Do
         _GEng_Sprite_AccelSet($oSpriteBall, 0, 0)
         _GEng_Sprite_AccelSet($oSpriteBall2, 0, 0)
     EndIf 
-
+    
     If (_IsPressed($SPACEBAR)) Then  
         _GEng_Sprite_AccelSet($oSpriteBall, 500, 0)
         _GEng_Sprite_AccelSet($oSpriteBall2, -500, 0)
