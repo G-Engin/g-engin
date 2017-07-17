@@ -1,6 +1,6 @@
 # GEngin
 #### Author: [Matwachich](https://github.com/matwachich)
-### G-Engin is a simple and complet 2D game developpement UDF for AutoIt3!
+### G-Engin is a simple and complet 2D game development UDF for AutoIt3!
 
 ## [Samples](Samples)
 * [Basic](Samples/Basic.au3)
