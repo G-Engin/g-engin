@@ -16,3 +16,6 @@
 ## [Sample Games](Samples/Games)
 * [G-Astéroïdes](Samples/Games/Avion.au3)
 * [Tank Game](Samples/Games/Tank.au3)
+
+## Tips
+:bulb: Use [Visual Studio Code](https://code.visualstudio.com/) along with [AutoIt](https://marketplace.visualstudio.com/items?itemName=Damien.autoit) and [G-Engin]() extensions to make it easy to develop your games.
