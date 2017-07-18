@@ -32,7 +32,6 @@ Global $partX = 0, $partY = 0
 ;~ Does not draw the image in the sprite, when the width and height
 ;~ $img = _GEng_ImageLoadStream(_File_particles_png(), $partsTailleX, $partsTailleY, $partX * 32, $partY * 32, 32, 32)
 $img = _GEng_ImageLoadStream(_File_particles_png())
-;~ $img = _GEng_ImageLoad("res/images/particles.png")
 
 Global $mos
 Global $_maxParticles = 100, $_particlesArray[1][3] = [[0,0,0]]

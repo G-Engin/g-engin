@@ -61,11 +61,8 @@ Do
 	EndIf
 
 	#Region Draw Text
-	 If (_GEng_Sound_IsPlaying($oSoundExplosion)) Then
-	 	 _GEng_Text_StringSet($oText, "* Blowing up")
-	 Else
-		 _GEng_Text_StringSet($oText, "* Spacebar => Start Explosion")
-	 EndIf
+	 $sDisplayText = (_GEng_Sound_IsPlaying($oSoundExplosion)) ? "* Blowing up" : "* Spacebar => Start Explosion"
+	 _GEng_Text_StringSet($oText, $sDisplayText)
 	 _GEng_Text_Draw($oText)		
 	#EndRegion
 
