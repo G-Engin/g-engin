@@ -43,7 +43,7 @@ _GEng_Sprite_OriginSetEx($oSpriteExplosion, $GEng_Origin_Mid)
 _GEng_Sprite_PosSet($oSpriteExplosion, ($scrW - 50) / 2, $scrH - 200)
 
 $oFont = _GEng_Font_Create("Comic Sans MS", 25)
-$oText = _GEng_Text_Create($oFont, "", $GEng_Color_Navy, 0, 0, $scrW, $scrH)
+$oText = _GEng_Text_Create($oFont, "", $GEng_Color_Black, 0, 0, $scrW, $scrH)
 
 Do
 	_GEng_ScrFlush($GEng_Color_White)

@@ -18,7 +18,7 @@ $oSpriteBall2 = _GEng_Sprite_Create($oImageBall2)
 _SetupSpriteBall($oSpriteBall2, $scrW - 63)
 
 $oFont = _GEng_Font_Create("Comic Sans MS", 18)
-$oText = _GEng_Text_Create($oFont, "* Spacebar => Start Collision", $GEng_Color_Navy, 0, 0, $scrW, $scrH)
+$oText = _GEng_Text_Create($oFont, "* Spacebar => Start Collision", $GEng_Color_Black, 0, 0, $scrW, $scrH)
 
 Do
     _GEng_ScrFlush($GEng_Color_White)

@@ -32,7 +32,7 @@ $sTextDisplay = "* Left Arrow => Move to back" & @CRLF _
               & "* Right Arrow => Move to front" & @CRLF _
               & "* Down Arrow => Turn clockwise"
 $oFont = _GEng_Font_Create("Comic Sans MS", 18)
-$oText = _GEng_Text_Create($oFont, $sTextDisplay, $GEng_Color_Navy, 0, 0, $scrW, $scrH)
+$oText = _GEng_Text_Create($oFont, $sTextDisplay, $GEng_Color_Black, 0, 0, $scrW, $scrH)
 
 Do
     _GEng_ScrFlush($GEng_Color_White)
