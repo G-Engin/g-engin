@@ -2,6 +2,9 @@
 #### Author: [Matwachich](https://github.com/matwachich)
 ### G-Engin is a simple and complet 2D game development UDF for AutoIt3!
 
+## Wiki
+> https://github.com/G-Engin/g-engin/wiki
+
 ## [Samples](Samples)
 * [Basic](Samples/Basic.au3)
 * [Collisions](Samples/Collisions.au3)
