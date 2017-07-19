@@ -8,7 +8,7 @@
 
 #ce ----------------------------------------------------------------------------
 
-;~ Color format (0xAARRGGBB)
+;File: Color
 
 #Region ### Functions ###
 #cs
@@ -17,6 +17,8 @@
 	__GEng_Color_InvertColor($hexColor)
 #ce
 #EndRegion ###
+
+;~ Color format (0xAARRGGBB)
 
 Global Const $GEng_Color_Black 							= 0xFF000000
 Global Const $GEng_Color_Navy 							= 0xFF000080
@@ -159,6 +161,28 @@ Global Const $GEng_Color_LightYellow                    = 0xFFFFFFE0
 Global Const $GEng_Color_Ivory                          = 0xFFFFFFF0
 Global Const $GEng_Color_White                          = 0xFFFFFFFF
 
+; #FUNCTION# ;===============================================================================
+; Name...........: _GEng_Color_ShowList
+; Description ...: Afficher la liste des couleurs
+; Syntax.........: _GEng_Color_ShowList()
+; Parameters ....: Aucun
+; Return values .: Aucun
+; Author ........: RonildoSouza
+; Remarks .......: 
+; ;==========================================================================================
+#cs
+Function: _GEng_Color_ShowList
+	Show List of colors
+
+Prototype:
+	> _GEng_Color_ShowList()
+
+Parameters:
+	Nothing
+
+Returns:
+	Nothing
+#ce
 Func _GEng_Color_ShowList()
     Local $aColors = [["$GEng_Color_Black", $GEng_Color_Black], _
                     ["$GEng_Color_Navy", $GEng_Color_Navy], _
@@ -311,7 +335,7 @@ Func _GEng_Color_ShowList()
         GUICtrlSetColor(-1, __GEng_Color_InvertColor("0x" & Hex($aColors[$i][1], 6)))
     Next
 
-    GUISetState( @SW_SHOW )
+    GUISetState(@SW_SHOW)
     While 1
         Switch GUIGetMsg()
             Case -3 ;~ $GUI_EVENT_CLOSE
