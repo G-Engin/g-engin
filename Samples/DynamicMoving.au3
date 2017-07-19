@@ -12,9 +12,11 @@ _GEng_Start("Dynamic Moving", $scrW, $scrH)
 
 $oImageCar = _GEng_ImageLoad("./res/images/dynamic_moving/car.png")
 $oSpriteCar = _GEng_Sprite_Create($oImageCar)
-_GEng_Sprite_SizeSet($oSpriteCar, 100, 50)
-_GEng_Sprite_PosSet($oSpriteCar, $scrW / 2, $scrH / 2)
-_GEng_Sprite_OriginSetEx($oSpriteCar, $GEng_Origin_Mid)
+#Region Set sprite Size, Origin and Position in this sequence
+ _GEng_Sprite_SizeSet($oSpriteCar, 100, 50)
+ _GEng_Sprite_OriginSetEx($oSpriteCar, $GEng_Origin_Mid)
+ _GEng_Sprite_PosSet($oSpriteCar, $scrW / 2, $scrH / 2)
+#EndRegion
 
 #Region Sets for dynamic moving
  ;~ Assigns the maximum speed of movement and rotation of the sprite

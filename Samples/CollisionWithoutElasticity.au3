@@ -12,10 +12,10 @@ $oImageBall = _GEng_ImageLoad("./res/images/collisions/ball.png")
 $oImageBall2 = _GEng_ImageLoad("./res/images/collisions/ball2.png")
 
 $oSpriteBall = _GEng_Sprite_Create($oImageBall)
-_SetupSpriteBall($oSpriteBall, 63)
+__SetupSpriteBall($oSpriteBall, 63)
 
 $oSpriteBall2 = _GEng_Sprite_Create($oImageBall2)
-_SetupSpriteBall($oSpriteBall2, $scrW - 63)
+__SetupSpriteBall($oSpriteBall2, $scrW - 63)
 
 $oFont = _GEng_Font_Create("Comic Sans MS", 18)
 $oText = _GEng_Text_Create($oFont, "* Spacebar => Start Collision", $GEng_Color_Black, 0, 0, $scrW, $scrH)
@@ -47,7 +47,7 @@ Until GuiGetMsg() = $GUI_EVENT_CLOSE
 _GEng_Shutdown()
 
 
-Func _SetupSpriteBall(ByRef $oSprBall, $PosX)
+Func __SetupSpriteBall(ByRef $oSprBall, $PosX)
     _GEng_Sprite_PosSet($oSprBall, $PosX, $scrH / 2)
     _GEng_Sprite_OriginSetEx($oSprBall, $GEng_Origin_Mid)
 
@@ -55,8 +55,8 @@ Func _SetupSpriteBall(ByRef $oSprBall, $PosX)
     _GEng_Sprite_InnertieSet($oSprBall, 1000000)
 
     #Region Sets to handle object collision 
-    _GEng_Sprite_MasseSet($oSprBall, 1)
-    _GEng_Sprite_CollisionSet($oSprBall, 2, 63, 63, 63)
+     _GEng_Sprite_MasseSet($oSprBall, 1)
+     _GEng_Sprite_CollisionSet($oSprBall, 2, 63, 63, 63)
     #EndRegion
 
     Return $oSprBall
