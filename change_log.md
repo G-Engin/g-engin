@@ -3,7 +3,7 @@
 | **+:** Ajout | **-:** Délétion | **!:** Correction | **\*:** Modification|
 |              |                 |                   |                     |
 
-# v 1.2.3 (~/~/~)
+# v 1.2.3 (25/07/2017)
 * +: GEng_Color_Constants.au3
 
 # v 1.2.2 (10/02/2012)
