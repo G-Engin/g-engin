@@ -21,4 +21,4 @@
 * [Tank Game](Samples/Games/Tank.au3)
 
 ## Tips
-> :bulb: Use [Visual Studio Code](https://code.visualstudio.com/) along with [AutoIt](https://marketplace.visualstudio.com/items?itemName=Damien.autoit) and [G-Engin](https://github.com/G-Engin/GEngin-Snippets/blob/master/README.md) extensions to make it easy to develop your games.
+> :bulb: Use [Visual Studio Code](https://code.visualstudio.com/) along with [AutoIt](https://marketplace.visualstudio.com/items?itemName=Damien.autoit) and [G-Engin](https://marketplace.visualstudio.com/items?itemName=RonildoSouza.g-engin) extensions to make it easy to develop your games.
