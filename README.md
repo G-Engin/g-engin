@@ -16,7 +16,7 @@
 * [Sound And Animation](Samples/SoundAndAnimation.au3)
 
 ## [Sample Games](Samples/Games)
-* [Fly Chicken](Samples/Games/FlyChicken/FlyChicken.au3)
+* [Fly Chicken](Samples/Games/FlyChicken)
 * [G-Astéroïdes](Samples/Games/Avion.au3)
 * [Tank Game](Samples/Games/Tank.au3)
 
