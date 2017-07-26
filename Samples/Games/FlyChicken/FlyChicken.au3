@@ -1,4 +1,14 @@
-﻿#include "../../../GEngin.au3"
+﻿#cs ----------------------------------------------------------------------------
+
+ AutoIt Version: 3.3.6.1
+ Author:         RonildoSouza
+
+ Script Function:
+	
+
+#ce ----------------------------------------------------------------------------
+
+#include "../../../GEngin.au3"
 #include "Includes.au3"
 
 _GEng_Start($sGAME_NAME, $scrW, $scrH)

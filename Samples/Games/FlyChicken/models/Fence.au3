@@ -1,4 +1,14 @@
-﻿Local Const $iFENCE_POINT = 10
+﻿#cs ----------------------------------------------------------------------------
+
+ AutoIt Version: 3.3.6.1
+ Author:         RonildoSouza
+
+ Script Function:
+	
+
+#ce ----------------------------------------------------------------------------
+
+Local Const $iFENCE_POINT = 10
 Local Const $iFENCE_NUMBER = 3
 Local Const $iFENCE_SPEED = -100
 Local Const $dFENCE_WIDTH = $dCHICKEN_SIZE_H

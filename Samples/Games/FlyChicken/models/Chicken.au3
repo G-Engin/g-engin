@@ -1,3 +1,13 @@
+#cs ----------------------------------------------------------------------------
+
+ AutoIt Version: 3.3.6.1
+ Author:         RonildoSouza
+
+ Script Function:
+	
+
+#ce ----------------------------------------------------------------------------
+
 Global $oSprChicken
 Global $oImgChicken
 Global $oAnmChicken
