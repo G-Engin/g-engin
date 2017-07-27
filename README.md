@@ -22,11 +22,11 @@
 
 * ### **[G-Astéroïdes](Samples/Games/Avion.au3)**
 
-> ![ScreenShotFlyChicken](Samples/Games/Res/avion/screenshot.png)
+> ![ScreenShotAvion](Samples/Games/Res/avion/screenshot.png)
 
 * ### **[Tank Game](Samples/Games/Tank.au3)**
 
-> ![ScreenShotFlyChicken](Samples/Games/Res/tanks/screenshot.png)
+> ![ScreenShotTank](Samples/Games/Res/Tanks/screenshot.png)
 
 ## Tips
 > :bulb: Use [Visual Studio Code](https://code.visualstudio.com/) along with [AutoIt](https://marketplace.visualstudio.com/items?itemName=Damien.autoit) and [G-Engin](https://marketplace.visualstudio.com/items?itemName=RonildoSouza.g-engin) extensions to make it easy to develop your games.
