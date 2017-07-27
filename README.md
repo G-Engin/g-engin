@@ -16,9 +16,17 @@
 * [Sound And Animation](Samples/SoundAndAnimation.au3)
 
 ## [Sample Games](Samples/Games)
-* [Fly Chicken](Samples/Games/FlyChicken)
-* [G-Astéroïdes](Samples/Games/Avion.au3)
-* [Tank Game](Samples/Games/Tank.au3)
+* ### **[Fly Chicken](Samples/Games/FlyChicken)**
+
+> ![ScreenShotFlyChicken](Samples/Games/Res/flychicken/screenshot.png)
+
+* ### **[G-Astéroïdes](Samples/Games/Avion.au3)**
+
+> ![ScreenShotFlyChicken](Samples/Games/Res/avion/screenshot.png)
+
+* ### **[Tank Game](Samples/Games/Tank.au3)**
+
+> ![ScreenShotFlyChicken](Samples/Games/Res/tanks/screenshot.png)
 
 ## Tips
 > :bulb: Use [Visual Studio Code](https://code.visualstudio.com/) along with [AutoIt](https://marketplace.visualstudio.com/items?itemName=Damien.autoit) and [G-Engin](https://marketplace.visualstudio.com/items?itemName=RonildoSouza.g-engin) extensions to make it easy to develop your games.

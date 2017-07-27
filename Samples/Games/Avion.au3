@@ -62,7 +62,7 @@ _GEng_Start("G-Astéroïdes", $scrW, $scrH)
 _GEng_Sound_Init()
 ; ---
 
-;$img_Avion = _GEng_ImageLoad("res\avion\viper.png")
+$img_Avion = _GEng_ImageLoad("res\avion\images\viper.png")
 ;~ $img_Avion = _GEng_ImageLoad("res\avion\avion_new.png", 100, 80)
 ;~ $img_Shot = _GEng_ImageLoad("res\avion\balle.png", 11, 3)
 ;~ $img_Miss = _GEng_ImageLoad("res\avion\missile_new.png", 30, 40)
@@ -80,7 +80,7 @@ _GEng_Sound_Init()
 ;~ $img_Ast_3_1 = _GEng_ImageLoad("res\avion\meteorite_small1.png", 16, 16)
 ;~ $img_Ast_3_2 = _GEng_ImageLoad("res\avion\meteorite_small2.png", 16, 16)
 
-$img_Avion = _GEng_ImageLoad("res\avion\images\avion_new.png")
+;~ $img_Avion = _GEng_ImageLoad("res\avion\images\avion_new.png")
 $img_Shot = _GEng_ImageLoad("res\avion\images\balle.png")
 $img_Miss = _GEng_ImageLoad("res\avion\images\missile_new.png")
 $img_Explo_Small = _GEng_ImageLoad("res\avion\images\explosion.png")
@@ -310,14 +310,14 @@ Do
 	
 	If $tmp2 <> -1 Then
 		_GEng_Text_StringSet($txt, Round($tmp2) & " FPS")
-		WinSetTitle($__GEng_hGui, "", "G-Astï¿½roï¿½des (Nbr Sprites: " & $tmp & ")")
+		WinSetTitle($__GEng_hGui, "", "G-Astéroïdes (Nbr Sprites: " & $tmp & ")")
 	EndIf
 	
 	_AdjustDifficulty()
 	_LifeSwitchFont()
 	_GEng_Text_StringSet($txtLife, $playerLife & " %")
 	_GEng_Text_StringSet($txtScore, $score)
-	_GEng_Text_StringSet($txtAsterMax, $asterMax & " Astï¿½roï¿½des")
+	_GEng_Text_StringSet($txtAsterMax, $asterMax & " Astéroïdes")
 	
 Until GuiGetMsg() = -3
 
