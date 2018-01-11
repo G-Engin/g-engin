@@ -15,7 +15,7 @@ Local Const $dFENCE_WIDTH = $dCHICKEN_SIZE_H
 Local Const $sFENCE_TOP_IMAGE = "../res/flychicken/images/fence_top.png"
 Local Const $sFENCE_BOT_IMAGE = "../res/flychicken/images/fence_bottom.png"
 Local Const $dFENCE_MAX_HEIGHT = $scrH / 2 - $dCHICKEN_SIZE_H / 2
-Local Const $dFENCE_MIN_HEIGHT = $scrH / 3 - $dCHICKEN_SIZE_H / 2 * 2
+Local Const $dFENCE_MIN_HEIGHT = $scrH / 3 - $dCHICKEN_SIZE_H / 4
 
 Dim $iScore = 0
 Local $aSprTopFences[$iFENCE_NUMBER]
