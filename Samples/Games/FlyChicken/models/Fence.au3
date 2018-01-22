@@ -17,6 +17,8 @@ Local Const $sFENCE_BOT_IMAGE = "../res/flychicken/images/fence_bottom.png"
 Local Const $dFENCE_MAX_HEIGHT = $scrH / 2 - $dCHICKEN_SIZE_H / 2
 Local Const $dFENCE_MIN_HEIGHT = $scrH / 3 - $dCHICKEN_SIZE_H / 4
 
+Global $dHeightTopFence, $dHeightBottomFence
+
 Dim $iScore = 0
 Local $aSprTopFences[$iFENCE_NUMBER]
 Local $aSprBottomFences[$iFENCE_NUMBER]
@@ -45,7 +47,7 @@ EndFunc   ;==>_FenceDraw
 
 
 Func _FenceMove()
-	Local $dTmpFencePosX
+	Local $dTmpFencePosX, $dTmpFencePosY
 	
 	If ($bGamePlaying) Then
 		For $r = 0 To ($iFENCE_NUMBER - 1) Step +1
@@ -54,7 +56,7 @@ Func _FenceMove()
 			_GEng_Sprite_SpeedSet($aSprTopFences[$r], $iFENCE_SPEED, 0, -($iFENCE_SPEED))
 			_GEng_Sprite_SpeedSet($aSprBottomFences[$r], $iFENCE_SPEED, 0, -($iFENCE_SPEED))
 
-			_GEng_Sprite_PosGet($aSprTopFences[$r], $dTmpFencePosX, Null)
+			_GEng_Sprite_PosGet($aSprTopFences[$r], $dTmpFencePosX, $dTmpFencePosY)
 
 			_ChickenCheckCollision($aSprTopFences[$r], $aSprBottomFences[$r])
 
@@ -76,8 +78,8 @@ EndFunc   ;==>_FenceMove
 #ce
 
 Func __FenceSetSizeHeight()
-	Global $dHeightTopFence = Random($dFENCE_MIN_HEIGHT, $dFENCE_MAX_HEIGHT, 1)
-	Global $dHeightBottomFence = $scrH - ($dCHICKEN_SIZE_H * 2) - $dHeightTopFence
+	$dHeightTopFence = Random($dFENCE_MIN_HEIGHT, $dFENCE_MAX_HEIGHT, 1)
+	$dHeightBottomFence = $scrH - ($dCHICKEN_SIZE_H * 2) - $dHeightTopFence
 EndFunc   ;==>__FenceSetSizeHeight
 
 
