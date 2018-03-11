@@ -9,28 +9,28 @@
 #ce ----------------------------------------------------------------------------
 
 #include "../../GEngin.au3"
-#include <Misc.au3>
 Opt("MouseCoordMode", 2)
 Opt("GuiOnEventMode", 1)
 
 $dll = DllOpen("user32.dll")
-$continue = 1
+$continue = True
 
-Global $scrW = 800, $scrH = 600
+Global Const $scrW = 800, $scrH = 600
 
 _GEng_Start("Tank Game", $scrW, $scrH)
 
-GuiSetOnEvent(-3, "_Exit")
+GUISetCursor(16, $GUI_CURSOR_OVERRIDE)
 
-
-GUISetCursor(16, 1)
+GuiSetOnEvent($GUI_EVENT_CLOSE, "_Exit")
 
 Func _Exit()
-	$continue = 0
+	$continue = False
 EndFunc
 ; ---
 
-Global $_Smokes[1] = [0], $_Obus[1] = [0], $_Balles[1] = [0], $_Muzzles[1] = [0], $_ExpSm[1] = [0], $_ExpBg[1] = [0], $_Mine[1] = [0], $Enemies[1] = [0], $_Blood[1] = [0], $ShotTimers[1] = [0], $_Rocket[1] = [0], $ShotTimersR[1] = [0]
+Global $_Smokes[1] = [0], $_Obus[1] = [0], $_Balles[1] = [0], $_Muzzles[1] = [0], _
+	$_ExpSm[1] = [0], $_ExpBg[1] = [0], $_Mine[1] = [0], $Enemies[1] = [0], $_Blood[1] = [0], _
+	$ShotTimers[1] = [0], $_Rocket[1] = [0], $ShotTimersR[1] = [0]
 
 Global $LastX, $LastY, $XSave = -409
 
@@ -57,7 +57,7 @@ $imgMenuBar = _GEng_ImageLoad("res\tanks\images\BottomMenu.png")
 ; ---
 
 $sprB = _GEng_Sprite_Create() ; Background
-	_GEng_Sprite_ImageSet($sprB, $imgB, 0, 0, 800, 600)
+	_GEng_Sprite_ImageSet($sprB, $imgB, 0, 0, $scrW, $scrH)
 
 $sprT = _GEng_Sprite_Create() ; tank
 	_GEng_Sprite_ImageSet($sprT, $imgT, 0, 0, 55, 31)
@@ -195,7 +195,7 @@ While $continue
 	$t = _GEng_FPS_Get()
 	If $t <> -1 Then _
 		WinSetTitle($__GEng_hGui, "", "Exemple: Tank - FPS: " & Round($t) & " (" & @Extended & ")")
-Wend
+WEnd
 
 _GEng_Shutdown()
 DllClose($dll)
